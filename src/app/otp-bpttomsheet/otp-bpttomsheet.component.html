@@ -1,0 +1,14 @@
+<div class="main">
+    <header fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="none"></div>
+        <div class="heading">Confirm Your Identity</div>
+        <a (click)="onClose()"><mat-icon id="icon">clear</mat-icon></a>
+    </header>
+    <hr>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="otp" fxLayout="row" fxLayoutAlign="space-between center"><input id="partitioned" type="text"  maxlength="4"> <button class="signIn" (click)="onClose()">Verify</button></div>
+        <div class="otp-text">Enter the code we sent over SMS to <b>+(201) 555-0123</b>  </div>
+        <div class="resend"><a>Resend code in 20s</a></div>
+    </div>
+</div>
+<!-- (click)="onClose()" -->

@@ -1,0 +1,15 @@
+<div class="main">
+    <header fxLayout="row" fxLayoutAlign="space-between center">
+        <a (click)="onClose()"><mat-icon id="icon">clear</mat-icon></a>
+        <div class="none"><img src="../../assets/visa.svg" alt=""></div>
+    </header>
+
+    <div fxLayout="column" fxLayoutAlign="center left">
+        <div class="heading">Purchase Authentication</div>
+        <div class="otp-text">We have sent you text message to your registered mobile number <b>+(201) 555-0123</b>  </div>
+        <h6>Confirmation Code</h6>
+        <div class="otp"><input id="partitioned" type="text"  maxlength="4"></div>
+        <button mat-raised-button class="btn" (click)="onConfirmPayment()">Confirm Payment</button>
+        <div class="resend" fxLayout="column" fxLayoutAlign="center center"><a>Resend code</a></div>
+    </div>
+</div>

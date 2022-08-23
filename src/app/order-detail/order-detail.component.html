@@ -1,0 +1,147 @@
+<div class="menu-bar" fxLayout="row" fxLayoutAlign="start center">
+    <span><a  (click)="onBack()"><img src="../../assets/Vector copy.svg" alt=""></a></span>
+    <h3 class="h3">Order # 564778</h3>
+</div>
+<div class="main">
+    <div class="thanks" fxLayout="column" fxLayoutAlign="space-around center">
+        <h2>Thankyou {{name}}!</h2>
+        <p class="p">Your order is confirmed. We have accepted your order, 
+            and we’re getting it ready.</p>
+        <img src="../../assets/Untitled-1-02 1.svg" alt="" class="a">
+        <img src="../../assets/Group 7489.svg" alt="" class="b">
+        <!-- <div class="gif-div"><img class="gif" src="../../assets/3-steps.gif" alt=""></div> -->
+        <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+            <div class="contact-div" fxLayout="row" fxLayoutAlign="space-between end">
+                <div fxLayout="row" fxLayoutAlign="space-between top">
+                    <div class="img"><img src="../../assets/Group 7545.svg" alt=""></div>
+                    <div class="text">
+                        <h6>Contact</h6>
+                        <div fxLayout="row" fxLayoutAlign="space-between center " class="contact-div">
+                        <p>{{num}}</p>
+                    
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="../../assets/Group 7536.svg" alt="">
+                </div>
+            </div>
+            <!-- <div ><button (click)="onClickContactInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+            <div fxLayout="row" fxLayoutAlign="space-between top">
+                <div class="img"><img src="../../assets/Group 7492.svg" alt=""></div>
+                <div class="text">
+                    <h6>Shipping Info</h6>
+                    <p>{{name}}</p>
+                    <p>{{add}}</p>
+                </div>
+            </div>
+            <!-- <div ><button (click)="onClickShippingInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon" >expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="box" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==1||radio==0">
+            <div fxLayout="row" fxLayoutAlign="space-between top">
+                <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
+                <div class="text">
+                    <h6>Delivery Type</h6>
+                    <h5>Standard</h5>
+                    <p>Get it between Wed, Jan 15-Fri, Jan 24</p>
+                </div>
+            </div>
+            <!-- <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="box" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==2">
+            <div fxLayout="row" fxLayoutAlign="space-between top">
+                <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
+                <div class="text">
+                    <h6>Delivery Type</h6>
+                    <h5>Express</h5>
+                    <p>Get it between Wed, Jan 15-Mon, Jan 18</p>
+                </div>
+            </div>
+            <!-- <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="box" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==3">
+            <div fxLayout="row" fxLayoutAlign="space-between top">
+                <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
+                <div class="text">
+                    <h6>Delivery Type</h6>
+                    <h5>Next Day</h5>
+                    <p>Get it between Wed, Jan 15-Thur, Jan 16</p>
+                </div>
+            </div>
+            <!-- <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+            <div fxLayout="row" fxLayoutAlign="space-between top">
+                <div class="img"><img src="../../assets/Group 7490.svg" alt=""></div>
+                <div class="text">
+                    <h6>Payment Method</h6>
+                    <p *ngIf="selectedMethod=='card'||selectedMethod==''"><img src="../../assets/Group 774.svg" alt=""> ****4242</p>
+                    <p *ngIf="selectedMethod=='paypal'"><img src="../../assets/Group 7545 (1).svg" alt=""> ****4242</p>
+                    <p *ngIf="selectedMethod=='klarna'"><img src="../../assets/Group 7546 (1).svg" alt=""> ****4242</p>
+                    <p *ngIf="selectedMethod=='amazon'"><img src="../../assets/Group 7547 (1).svg" alt=""> ****4242</p>
+                </div>
+            </div>
+            <!-- <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="box" fxLayout="column" fxLayoutAlign="space-between top">
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
+                <div class="grey-text">Subtotal</div>
+                <div class="text">${{subtotalAmount}}</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==1||radio==0">
+                <div class="grey-text">Shipping</div>
+                <div class="text">$5.95</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==2">
+                <div class="grey-text">Shipping</div>
+                <div class="text">$12.95</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==3">
+                <div class="grey-text">Shipping</div>
+                <div class="text">$22.95</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" >
+                <div class="grey-text">Tax</div>
+                <div class="text">${{taxAmount | number : '1.2-2'}}</div>
+            </div>
+            <!-- <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==0"  >
+                <div class="total-text">Total</div>
+                <div class="total-text">${{subtotalAmount | number : '1.2-2'}}</div>
+            </div> -->
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==1||radio==0" >
+                <div class="total-text">Total</div>
+                <div class="total-text">${{subtotalAmount+5.95+taxAmount | number : '1.2-2'}}</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==2" >
+                <div class="total-text">Total</div>
+                <div class="total-text">${{subtotalAmount+12.95+taxAmount | number : '1.2-2'}}</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="radio==3" >
+                <div class="total-text">Total</div>
+                <div class="total-text">${{subtotalAmount+22.95+taxAmount | number : '1.2-2'}}</div>
+            </div>
+            <!-- <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+        </div>
+        <div class="conditions" fxLayout="row">
+            <mat-checkbox class="example-margin" [checked]="true"></mat-checkbox>
+            <div class="checkbox-space">
+                <div class="save-info-text">Save my information with 1-Click Checkout for a faster checkout next time</div>
+                <img src="../../assets/By clicking Pay, you agree to create a 1-Click Checkout account under our Terms of Use and Privacy Policy.svg" alt="" class="term">
+            </div>
+        </div>
+    
+        
+    </div>
+    <!-- <div class="buttons" fxLayout="column" fxLayoutAlign="space-between stretch" >
+        <button routerLink="sign-in" class="black" (click)="onReturn()">Return Home</button>
+        <button (click)=" openDialog()" class="white"> Cancel Order</button>
+    </div> -->
+</div>
+<div class="dummy-div"></div>
+<footer>
+
+    <app-order-menu-bar></app-order-menu-bar>
+</footer>
+

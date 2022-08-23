@@ -1,0 +1,175 @@
+.order-detail{
+    width: auto;
+    height:3.438rem;
+    background-color: #F9D9E0;
+    position: relative;
+    top:-0.27rem;
+    /* z-index:9999999; */
+    padding: 0rem 1.5rem;
+}
+.order-detail-text{
+    font-weight: 600;
+}
+h3{
+    font-size: 15px;
+    font-weight: 600;
+    color: #3C3C3F;
+}
+.order-detail-dropdown{
+    width: 90px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    color: #3C3C3F;
+    font-size: 13px;
+    font-weight: 500;
+    padding: auto; 
+}
+mat-icon{
+    transform: scale(0.7);
+    padding-right: 0px;
+    margin-right:0px ;
+}
+.support{
+    padding: 0px;
+    margin: 0px;
+}
+button:hover{
+    filter: brightness(95%);
+}
+::ng-deep.mat-menu-panel {
+    max-width: 420px !important;
+    position: relative;
+    left:24px;
+    top:10px;
+    box-shadow: 0px 405px rgb(0,0,0,0.7);
+    
+
+  }
+::ng-deep .mat-menu-content:not(:empty){
+    padding: 30px !important;
+    overflow: hidden;
+    height: 345px !important;
+    max-width: 420px !important;
+  }
+  @media (max-width: 500px) {
+    ::ng-deep.mat-menu-panel {
+       
+        
+        left:0px;
+      }
+  }
+  h2{
+
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    margin-bottom: 8px;
+
+
+  }
+.total{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    
+
+}
+.quantity{
+
+    color: #878787;
+
+
+
+}
+.amount{
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+
+
+}
+.amount-row{
+    padding-bottom: 10px;
+}
+.text{
+
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 18px;
+    letter-spacing: 0em;
+  
+
+
+}
+.button-div{
+    min-width: 260px;
+    max-width: 420px;
+    align-items: center;
+    justify-content: center;
+}
+hr{
+    
+    width: 100%;
+    margin: 15px 0px;
+  
+   
+   border: 0.5px solid #cecece;
+}
+.product{
+    padding-left: 7px;
+}
+.icon{
+    height: 46px;
+    position: relative;
+    top: 4px;
+}
+.cart-div{
+    position: relative;
+    background-color: white;
+}
+
+.edit-order{
+    margin: 30px 106px 15px 106px;
+    padding: 10px 40px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 14;
+    font-weight: 500;
+    border-radius: 2px;
+    width: 150px;
+
+}
+
+.edit-order:hover{
+    background-color: rgb(87,87, 87);
+}
+
+.counter-div{
+    margin-left: 48px;
+    
+}
+.counter{
+    width: 75px;
+}
+.remove{
+    width: 420px;
+    color: #cecece;
+    font-size: 14px;
+    text-align: center;
+}
+button:hover{
+    filter: brightness(95%);
+}
+@media only screen and (max-width: 420px) {
+    .main {
+      width: 100%;
+    }
+  }

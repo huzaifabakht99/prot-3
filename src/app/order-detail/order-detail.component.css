@@ -1,0 +1,175 @@
+
+*:not(#icon){
+    font-family: 'Manrope', sans-serif;
+}
+button{
+    border: none;
+    background-color: black;
+    color: white;
+    height: 50px;
+    border-radius: 6px ;
+    
+}
+.white{
+    background-color: white !important;
+    color: black !important;
+    border: 1px black solid;
+    
+}
+.buttons{
+
+    margin: 20px 2.594rem 2.594rem ;
+    height: 118px ;
+
+}
+.menu-bar{
+    padding:0px 29px;
+}
+.h3{
+    font-size: 16PX;
+    font-weight: 500;
+    position: relative;
+    top: 7px;
+    left: 88px;
+    color: #686868;
+}
+h2{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: myFont;
+}
+.gif{
+    width:340px;
+}
+mat-checkbox{
+    padding-right: 8px;
+}
+.save-info-text{
+  
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+padding-bottom: 5px;
+
+
+}
+.conditions{
+    margin-top: 20px;
+}
+.contact-div{
+    width: 100%;
+   
+}
+.conditions{
+    width: 85%;
+}
+.gif-div{
+    width: 340px;
+    height: 330px;
+    padding-bottom: 20px;
+}
+.p{
+    margin-bottom: 27px;
+    padding: 0px 36px;
+    align-content: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16.39px;
+    text-align: center;
+    color: #6a6a6a;
+
+}
+.a{
+    margin-bottom: 25px;
+
+}
+.b{
+    margin-bottom: 14.54px;
+}
+.space{
+    margin: 10px 0px;
+}
+.adjust{
+    position: relative;
+    left: 5px;
+}
+button:hover{
+    filter: brightness(95%);
+}
+.img{
+    margin-right: 12px;
+}
+
+.box{
+    width: 85%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 11px;
+    margin: 4px 0px;
+}
+h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #2f2f2f;
+    margin-bottom: 20px;
+    font-family: myFont;
+}
+h6{
+    color: #3C3C3F;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.12px;
+    margin-bottom: 4px;
+    font-family: myFont;
+}
+h5{
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: myFont;
+}
+p{
+    margin: 0px;
+    color: #1F2937;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.39px;
+    font-family: myFont;
+    
+}
+.grey-text{
+    color: #848484;
+    font-size: 13px;
+    font-weight: 500;
+}
+.text{
+    font-size: 13px;
+    font-weight: 500;
+
+}
+.total-text{
+    font-size: 16px;
+    font-weight: 500;
+
+}
+.line{
+    padding-bottom: 14px;
+}
+.dummy-div{
+    height: 85px;
+    width: 100%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+@media screen and ( min-width:501px) {
+    footer{
+        width: 420px;
+    }
+    
+}

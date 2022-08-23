@@ -1,0 +1,99 @@
+<div class="main" >
+    <div *ngIf="addNew==false">
+     <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+         <h5>SHIPPING INFO</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+     </div>
+     <div >
+         <mat-radio-group aria-label="Select an option" fxLayout="column" fxLayoutAlign="space-around left">
+             <div class="options" fxLayout="column" fxLayoutAlign="start left">
+                 <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                     <mat-radio-button value="1" [checked]="true" (click)="onSelected1()"></mat-radio-button>
+                     <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                     <div>
+                         <p class="noSpace">Hadia Ali</p>
+                         <p class="noSpace">545 W. 14th Street way, NY 77011</p>
+                     </div>
+                     <div class="default">Default</div>
+                     </div>
+                 </div>
+                 <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                     <mat-radio-button value="2" (click)="onSelected2()"></mat-radio-button>
+                     <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                     <div>
+                         <p class="noSpace">Usman Nasir</p>
+                         <p class="noSpace">443 W. 16th Street way, LA 56433</p>
+                     </div>
+                     </div>
+                 </div>
+                 <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                     <mat-radio-button value="3" (click)="onSelected3()"></mat-radio-button>
+                     <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                     <div>
+                         <p class="noSpace">Hadia Ali</p>
+                         <p class="noSpace">443 W. 16th Street way, AU 64675</p>
+                     </div>
+                     </div>
+                 </div>
+                 <div class="option" fxLayout="row" fxLayoutAlign="start left" >
+                     <mat-radio-button value="3"></mat-radio-button>
+                     <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                     <div>
+                         <p class="noSpace">Hadia Ali</p>
+                         <p class="noSpace">443 W. 16th Street way, AU 64675</p>
+                     </div>
+                     </div>
+                 </div>
+                 <div class="option" fxLayout="row" fxLayoutAlign="start left" *ngIf="add==true">
+                     <mat-radio-button value="4" (click)="onRadioSelected()"></mat-radio-button>
+                     <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                     <div>
+                         <p class="noSpace">{{fullName.value}}</p>
+                         <p class="noSpace">{{fullAdd}}</p>
+                     </div>
+                     </div>
+                 </div>
+             </div>
+         </mat-radio-group>
+         <div fxLayout="row" fxLayoutAlign="space-between center">
+            <a class="addnew" (click)="onAddNew()">+Add New</a>
+            <button (click)="onDone()" class="btn" fxLayout="row" fxLayoutAlign="center center">Done</button>
+        </div>
+     </div>
+    </div>
+     <div class="change-shipping-info" *ngIf="addNew==true">
+         <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+             <h5>ADD SHIPPING INFO</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+         </div>
+         <div class="feilds manual-address" fxLayout="column" fxLayoutAlign="space-around left" >
+             <mat-form-field appearance="outline">
+                 <mat-label>Full Name</mat-label>
+                 <input matInput placeholder="" [formControl]="fullName">
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                 <mat-label>Shipping Address</mat-label>
+                 <input matInput placeholder="" [formControl]="shippingAdd">
+               </mat-form-field>
+               <div fxLayout="column" fxLayoutAlign="space-around left">
+                 <mat-form-field appearance="outline">
+                     <mat-label>Country</mat-label>
+                     <input matInput placeholder="" [formControl]="country">
+                   </mat-form-field>
+                   <mat-form-field appearance="outline">
+                     <mat-label>State</mat-label>
+                     <input matInput placeholder="" [formControl]="state" >
+                   </mat-form-field>
+               </div>
+               <div fxLayout="column" fxLayoutAlign="space-around left">
+                 <mat-form-field appearance="outline">
+                     <mat-label>City</mat-label>
+                     <input matInput placeholder="" [formControl]="city">
+                 </mat-form-field>
+                 <mat-form-field appearance="outline">
+                     <mat-label>Zip Code</mat-label>
+                     <input matInput placeholder="" [formControl]="zip">
+                 </mat-form-field>
+               </div>
+               <div fxLayout="row" fxLayoutAlign="space-around center" class="button"><button (click)="onSave()">Save</button></div>
+         </div>
+     </div>
+ </div>

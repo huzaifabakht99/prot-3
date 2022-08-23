@@ -1,0 +1,212 @@
+*:not(#icon){
+    font-family: 'Manrope', sans-serif;
+}
+.text-radio-button{
+    width: 370px;
+}
+.default{
+    width: 84px !important;
+    font-size: 12px;
+    font-weight: 500;
+    color: #161616;
+    font-weight: 800;
+    border-radius: 3px;
+    text-align: center;
+}
+.option{
+    margin-bottom: 30px;
+}
+.main{
+    padding: 0px;
+    max-width: 385px;
+  
+}
+.top{
+    margin-top:20px
+}
+h5{
+    margin-bottom: 39PX;
+    font-size:12px ;
+    font-weight: 500;
+}
+.close{
+
+    bottom: 56px;
+ background-color: #ECECEC;
+    /* border: 0.5px solid rgb(75, 74, 74); */
+    width:22.5px;
+    height: 22.5px;
+    text-align: center;
+    border-radius: 3PX;
+}
+#icon{
+    font-size: 18px;
+    margin-top: 2px;
+}
+img{
+    margin-right: 5px;
+  }
+.addnew{
+    color: #E71583;
+    font-size: 14px;
+    font-weight: 700;
+}
+.input-feild{
+    padding:0rem 0.875rem ;
+    margin:0px !important ;
+}
+.text{
+    width: 257.5px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20.5px;
+    padding-top:37px ;
+    padding-bottom: 25px;
+    text-align: center;
+    color: #A5A5A5;
+    margin: auto;
+}
+button{
+    width: 258.5px;
+    padding: 10px 0px;
+    border: none;
+    background-color: #E71583;
+    border-radius: 2px;
+    color: white;
+}
+.change-contact-info{
+    max-width: 100%;
+}
+.otp{
+    width: 333px;
+}
+h3{
+font-size: 20px;
+line-height: 27.32px;
+font-weight: 600;
+}
+h6{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.12px;
+    padding-top: 21px;
+    padding-bottom: 9px;
+
+}
+.otp-text{
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 1%;
+    text-align: center;
+    width: 249px;
+    margin-bottom: 48px;
+
+}
+.email-text{
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 1%;
+    text-align: center;
+    color: #6C6C6C;
+    margin-bottom: 50px;
+    
+
+}
+b{
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1%;
+
+
+}
+.email{
+    color: #E71583;
+}
+#otp-input{
+
+    width: 177px;
+    border-radius: 2px;
+    color: #6C6C6C;
+    letter-spacing: 24px;
+    padding: 13px 0px 8px 37px ;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: #6C6C6C 1px solid;
+    margin-bottom: 23px;
+
+}
+.change{
+    color: #E71583;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+   
+
+}
+button:hover{
+    filter: brightness(95%);
+}
+.otp-input{
+    width: 177px;
+    height: auto;
+    border: 0.5px solid #E71583;
+    padding: 8px 15px;
+}
+input{
+    border: none;
+}
+#partitioned {
+    padding-left: 15px;
+    letter-spacing: 25px;
+    border: 0;
+    /* background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%); */
+    background-position: bottom;
+    background-size: 50px 1px;
+    background-repeat: repeat-x;
+    background-position-x: 35px;
+    /* width: 220px; */
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+  }
+/* @media screen and (max-width: 767px){
+    ::ng-deep .otp-input{
+        width: 30px !important;
+        font-size: 17px !important;
+        height: 30px !important;
+        color: #E71583 !important;
+    }
+}
+@media screen and (max-width: 420px){
+    ::ng-deep .otp-input{
+        width: 30px !important;
+        font-size: 17px !important;
+        height: 30px !important;
+        color: #E71583 !important;
+    }
+}
+@media screen and (max-width: 1550px){
+    ::ng-deep .otp-input{
+        width: 30px !important;
+        font-size: 17px !important;
+        height: 30px !important;
+        color: #E71583 !important;
+    }
+} */
+@media screen and (max-width: 320px){
+    .main{
+        padding: 0px;
+        max-width: 285px;
+      
+    }
+    
+}
+.btn{
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: #E71583;
+    border-radius: 3px;
+    border: none;
+}

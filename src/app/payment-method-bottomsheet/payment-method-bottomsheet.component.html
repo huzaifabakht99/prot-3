@@ -1,0 +1,118 @@
+<div class="main">
+    <div *ngIf="addNew==false&& cardDiv==false">
+        <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+            <h5>PAYMENT METHOD</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+        </div>
+        <mat-radio-group aria-label="Select an option" fxLayout="column" fxLayoutAlign="space-around left">
+            <div class="options" fxLayout="column" fxLayoutAlign="start left">
+                <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                    <mat-radio-button value="1" [checked]="true" (click)="onButtonSelectedCard()"></mat-radio-button>
+                    <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                    <div>
+                        <img id="img" src="../../assets/Group 7546.svg" alt="">
+                        <span> **** 4242</span>
+                    </div>
+                    <div class="default">Default</div>
+                    </div>
+                </div>
+                <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                    <mat-radio-button value="2" (click)="onButtonSelectedKlarna()" ></mat-radio-button>
+                    <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                    <div>
+                        <img id="img" src="../../assets/Group 7547.svg" alt="">
+                        <span> **** 4242</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                    <mat-radio-button value="3" (click)="onButtonSelectedPaypal()"></mat-radio-button>
+                    <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                    <div>
+                        <img id="img" src="../../assets/Group 7548 (1).svg" alt="">
+                        <span>**** 4242</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="option" fxLayout="row" fxLayoutAlign="start left" *ngIf="amazon==true">
+                    <mat-radio-button value="4" (click)="onButtonSelectedAmazon()"></mat-radio-button>
+                    <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                    <div>
+                        <img id="img" src="../../assets/Group 7547 (1).svg" alt="">
+                        <span>**** 4242</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="option" fxLayout="row" fxLayoutAlign="start left" *ngIf="clear==true">
+                    <mat-radio-button value="5" (click)="onButtonSelectedClearpay()"></mat-radio-button>
+                    <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                    <div>
+                        <img id="img" src="../../assets/Frame.svg" alt="">
+                        <span>**** 4242</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </mat-radio-group>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <a class="addnew" (click)="onAddNew()">+Add New</a>
+            <button (click)="onDone()" class="btn" fxLayout="row" fxLayoutAlign="center center">Done</button>
+        </div>
+    </div>
+    <div *ngIf="addNew==true" class="methods">
+        <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+            <h5>PAY WITH</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <!-- (click)="onClickCard()" FOR ENABLING ADD NEW CARD -->
+            <button class="card" (click)="onClickAlreadyAdded();"><img id="img" src="../../assets/Group 7401.svg" alt=""></button> 
+            <button class="paypal" (click)="onClickAlreadyAdded();"><img id="img" src="../../assets/Group 7545 (1).svg" alt=""></button>
+            <button class="klarna" (click)="onClickAlreadyAdded();"><img id="img" src="../../assets/Group 7546 (1).svg" alt=""></button>
+            <button class="amazon" (click)="onClickAmazon();"><img id="img" src="../../assets/Group 7547 (1).svg" alt=""></button>
+            <button class="clearpay" (click)="onClickClear();"><img id="img" src="../../assets/Frame.svg" alt=""></button>
+        </div>
+    </div>
+    <div *ngIf="cardDiv==true">
+        <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+            <h5>ADD NEW CARD</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+        </div>
+        <div class="selected-method-card">
+            <div class="card-input" fxLayout="row" fxLayoutAlign="space-between center" >
+               <div>
+                <img src="../../assets/Group 7174.svg" alt="" class="card-img">
+                <input type="text" id="card-number" class="card-feilds card-number" placeholder="Card Number" maxlength="14">
+               </div>
+                <!-- <input type="month" class="card-feilds date" placeholder="MM/YY" maxlength="5"> -->
+                <!-- <input type="month" id="start" name="start" min="2018-03" value="2018-05"> -->
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <select aria-placeholder="MM" class="select" name="cars" id="cars">
+                        <option value="volvo">MM</option>
+                        <option value="saab">Jan</option>
+                        <option value="opel">Feb</option>
+                        <option value="audi">Mar</option>
+                        <option value="volvo">Apr</option>
+                        <option value="saab">May</option>
+                        <option value="opel">Jun</option>
+                        <option value="audi">Jul</option>
+                        <option value="volvo">Aug</option>
+                        <option value="saab">Sep</option>
+                        <option value="opel">Oct</option>
+                        <option value="audi">Nov</option>
+                        <option value="audi">Dec</option>
+                      </select>
+                      <select class="select" name="cars" id="cars">
+                        <option value="volvo">YY</option>
+                        <option value="saab">22</option>
+                        <option value="opel">23</option>
+                        <option value="audi">24</option>
+                        <option value="volvo">25</option>
+                        <option value="saab">26</option>
+                        <option value="opel">27</option>
+                        <option value="audi">28</option>
+                      </select>
+                </div>
+                <input type="text" class="card-feilds cvv" placeholder="CVV" maxlength="3">
+            </div>
+        </div>
+
+    </div>
+</div>

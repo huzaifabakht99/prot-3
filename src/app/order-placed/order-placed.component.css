@@ -1,0 +1,9 @@
+*:not(#icon){
+    font-family: 'Manrope', sans-serif;
+}
+button:hover{
+    filter: brightness(80%);
+}
+.main{
+  padding: 20px;
+}

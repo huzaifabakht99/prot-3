@@ -1,0 +1,42 @@
+
+<div class="main">
+    <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+        <h5>DELIVERY TYPE</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+    </div>
+    <mat-radio-group aria-label="Select an option" fxLayout="column" fxLayoutAlign="space-around left" [(ngModel)]="selectedRadio">
+        <div class="options" fxLayout="column" fxLayoutAlign="start left">
+            <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                <mat-radio-button value="0" [checked]="true" (click)="onRadioSelected()" [checked]="isChecked"></mat-radio-button>
+                <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                <div>
+                    <p class="heading">Standard</p>
+                    <p class="detail">(6 to 9 Bussiness days)</p>
+                </div>
+                <div class="default">Default</div>
+                </div>
+            </div>
+            <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                <mat-radio-button value="1" (click)="onRadioSelected2()" [checked]="isChecked"></mat-radio-button>
+                <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                <div>
+                    <p class="heading">Express</p>
+                    <p class="detail">2 to 3 Bussiness days</p>
+                </div>
+                </div>
+            </div>
+            <div class="option" fxLayout="row" fxLayoutAlign="start left">
+                <mat-radio-button value="2" (click)="onRadioSelected3()" [checked]="isChecked"></mat-radio-button>
+                <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                <div>
+                    <p class="heading">Next Day</p>
+                    <p class="detail">1 to 2 Bussiness days</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </mat-radio-group>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <a class="addnew" ></a>
+        <button (click)="onDone()" class="btn" fxLayout="row" fxLayoutAlign="center center">Done</button>
+    </div>
+</div>

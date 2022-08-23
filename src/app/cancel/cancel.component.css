@@ -1,0 +1,59 @@
+*:not(#icon){
+    font-family: 'Manrope', sans-serif;
+}
+.main{
+    padding: 25px;
+  }
+  #icon{
+    font-size: 18px;
+    color: #A7A7A7;
+  }
+button{
+    width: 120px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.buttons{
+  width: 250px;
+}
+h3{
+ 
+font-size: 18px;
+font-weight: 500;
+line-height: 25px;
+
+
+}
+.xyz{
+  width: 100%;
+}
+p{
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  margin-top: 24px;
+  margin-bottom: 36px;
+
+
+}
+.btn-no{
+  background-color: white;
+  
+  border: 1px solid #E4E4E4B2;
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+}
+.btn-yes{
+  background-color: #FF203A;
+
+  border:#FF203A;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+button:hover{
+  filter: brightness(95%);
+}

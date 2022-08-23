@@ -1,0 +1,284 @@
+
+<!-- <header fxLayout="row" fxLayoutAlign="space-around center"><img src="../../assets/Group 7253 (1).svg" alt=""></header> -->
+<div class="super-div">
+    <div class="sign-in-div">
+        <div class="check-point" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <div>
+                    <mat-icon id="icon" class="circles">lens</mat-icon>
+                </div>
+                <div class="check-point-text">
+                    Shipping
+                </div>
+            </div>
+            <hr>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <div>
+                    <mat-icon id="icon" class="circles">lens</mat-icon>
+                </div>
+                <div class="check-point-text">
+                    Payment
+                </div>
+            </div>
+            <hr>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <div>
+                    <mat-icon id="icon" class="circles">lens</mat-icon>
+                </div>
+                <div class="check-point-text">
+                    Review
+                </div>
+            </div>
+        </div>
+            <div class="sign-in">
+                <h2 class="center">Start your Checkout!</h2>
+                <div class="text">Enter your phone number below to start with the checkout 
+                process.</div>
+                <!-- formfield -->
+                
+                    <div class="input-feild" fxLayout="column" fxLayoutAlign="space-around left">
+                        <div appearance="outline">
+                            <div fxLayout="row" fxLayoutAlign="space-around left">
+                                <div id="flag"><img  src="../../assets/Group 7554.svg" alt=""></div>
+                            <input class="number" type="number" matInput placeholder="Phone Number" [formControl]="phoneNumber" maxlength="11">
+                            <button mat-raised-button [disabled]="phoneNumber.value==''" (click)="onEnter()" class="enter-button">Enter</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+        
+            </div>
+    </div>
+    <div class="main">
+       <form>
+        
+            <div class="shadow">
+                
+                <div class="shipping-info">
+                    <h2>1. Shipping Information</h2>
+                    <!-- formfield -->
+                    <div class="example-container">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="pat@example.com"  required [formControl]="email">
+                        <mat-error >Error</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- formfield -->
+                    <div class="example-container">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput placeholder=""  required [formControl]="fullName">
+                        <mat-error >Error</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- formfield -->
+                    <div class="example-container">
+                        <mat-form-field appearance="outline">
+                        <mat-label>Sipping Address</mat-label>
+                        <input matInput placeholder=""  required [formControl]="shippingAddress">
+                        <mat-error >Error</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="enter-address-manually">
+                        <a >Enter Address Manually</a>
+                    </div>
+                    <div class="check-box">
+                        <!-- checkbox -->
+                        <mat-checkbox ><div class="same-billing-add">My billing address is same as shipping.</div></mat-checkbox>
+                    </div>
+                    
+    
+                </div>
+                <div class="delivery-type">
+                    <h2>2. Delivery Type</h2>
+                    <div class="box disabled" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="shippingAddress.value ===''">
+                        <div class="required-shippingadd">Shipping options will show up once you enter shipping address</div>
+                    </div>
+                    <div class="enable" *ngIf="shippingAddress.value !=''" >
+                        <mat-radio-group aria-label="Select an option" fxLayout="column" fxLayoutAlign="space-around left" >
+                            <div class="options" fxLayout="row" fxLayoutAlign="start left" [ngStyle]="{'border': selectedRadio==1 ? 'black' : '#C2C2C2' }">
+                                <mat-radio-button value="1" [checked]="true" (click)="onSelectRadio1()"></mat-radio-button>
+                                <div class="text-radio-button" >
+                                    <h4>Standard <span class="delivery-days"> (6 to 9 business days) </span> $5.95</h4>
+                                    <p>Order within <span class="dateNtime">6 hrs 1 min</span> to get it by <span class="dateNtime">Thurs, Jan 16</span></p>
+                                </div>
+                            </div>
+                            <div class="options" fxLayout="row" fxLayoutAlign="start left" [ngStyle]="{'border': selectedRadio==2 ? 'black' : '#C2C2C2' }">
+                                <mat-radio-button value="2" (click)="onSelectRadio2()"></mat-radio-button>
+                            <div class="text-radio-button">
+                                <h4>Express <span class="delivery-days"> (2 to 3 business days) </span>$12.95</h4>
+                                <p>Order within  <span class="dateNtime">6 hrs 1 min</span> to get it by <span class="dateNtime">Mon, Jan 13</span></p>
+                            </div>
+                            </div>
+                            <div class="options" fxLayout="row" fxLayoutAlign="start left" [ngStyle]="{'border': selectedRadio==3 ? 'black' : '#C2C2C2' }">
+                                <mat-radio-button value="3" (click)="onSelectRadio3()" ></mat-radio-button>
+                                <div class="text-radio-button">
+                                    <h4>Next day<span class="delivery-days"> (1 to 2 days) </span> $22.95</h4>
+                                    <p>Order within <span class="dateNtime">6 hrs 1 min </span>to get it by <span class="dateNtime">Thurs, Jan 09</span></p>
+                                </div>
+                            </div> 
+                            
+                        </mat-radio-group>
+                    </div>
+                        
+                </div>
+                <div class="payment-method">
+                    <h2>3. Payment Method</h2>
+                    <div>
+                        <div class="option" >
+                        <a (click)="onPaymentMethodCard()" fxLayout="row" fxLayoutAlign="space-between center">   
+                            <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                                <mat-radio-button value="1" [checked]="true"  ></mat-radio-button>
+                                <img id="img" src="../../assets/Group 6939.svg" alt="">
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="start center ">
+                                <div class="payfull">
+                                    PAY FULL
+                                </div>
+                                <mat-icon id="icon" class="expand-more">expand_more</mat-icon>
+                            </div>
+                        </a>     
+                        </div>
+                        <div class="option-expandes-more" *ngIf="showCard==true">
+                            <div class="card-input" fxLayout="row" fxLayoutAlign="space-between center" >
+                                <div>
+                                <img src="../../assets/Group 7174.svg" alt="" class="card-img">
+                                <input type="text" id="card-number" class="card-feilds card-number" placeholder="Card Number" maxlength="14">
+                                </div>
+                                <!-- <input type="month" class="card-feilds date" placeholder="MM/YY" maxlength="5"> -->
+                                <!-- <input type="month" id="start" name="start" min="2018-03" value="2018-05"> -->
+                                <div fxLayout="row" fxLayoutAlign="space-between center">
+                                    <select aria-placeholder="MM" class="select" name="cars" id="cars">
+                                        <option value="volvo">MM</option>
+                                        <option value="saab">Jan</option>
+                                        <option value="opel">Feb</option>
+                                        <option value="audi">Mar</option>
+                                        <option value="volvo">Apr</option>
+                                        <option value="saab">May</option>
+                                        <option value="opel">Jun</option>
+                                        <option value="audi">Jul</option>
+                                        <option value="volvo">Aug</option>
+                                        <option value="saab">Sep</option>
+                                        <option value="opel">Oct</option>
+                                        <option value="audi">Nov</option>
+                                        <option value="audi">Dec</option>
+                                    </select>
+                                    <select class="select" name="cars" id="cars">
+                                        <option value="volvo">YY</option>
+                                        <option value="saab">22</option>
+                                        <option value="opel">23</option>
+                                        <option value="audi">24</option>
+                                        <option value="volvo">25</option>
+                                        <option value="saab">26</option>
+                                        <option value="opel">27</option>
+                                        <option value="audi">28</option>
+                                    </select>
+                                </div>
+                                <div class="cvv-div"><input type="text" class="card-feilds cvv" placeholder="CVV" maxlength="3"><img src="../../assets/Vector.svg" alt=""> </div>
+                            </div>
+                        </div>
+                        
+    
+                        <div class="option" >
+                        <a (click)="onPaymentMethodPaypal()" fxLayout="row" fxLayoutAlign="space-between center">  
+                            <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                                <mat-radio-button value="2"></mat-radio-button>
+                                <img id="img" src="../../assets/Group 6943.svg" alt="">
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="start center ">
+                                <div class="payfull">
+                                    PAY FULL
+                                </div>
+                                <mat-icon id="icon" class="expand-more">expand_more</mat-icon>
+                            </div>
+                        </a>     
+                        </div>
+                        <div class="option-expandes-more" *ngIf="showPaypal==true">
+                            <div class="website-link">
+                                <div class="text">Complete your transaction via PayPal by clicking on the button below</div>
+                                <div class="grey-text">PayPal will open in a new tab.</div>
+    
+                            </div>
+    
+                        </div>
+                        <div class="option" >
+                        <a (click)="onPaymentMethodKlarna()" fxLayout="row" fxLayoutAlign="space-between center">   
+                            <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                                <mat-radio-button value="3"   (click)="onPaymentMethodKlarna()" ></mat-radio-button>
+                                <img id="img" src="../../assets/Group 7552.svg" alt="">
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="start center ">
+                                <div class="payfull">
+                                    PAY PLAN
+                                </div>
+                                <mat-icon id="icon" class="expand-more">expand_more</mat-icon>
+                            </div>
+                        </a>
+                        </div>
+                        <div class="option-expandes-more" *ngIf="showKlarna==true">
+                            <div class="klarna-div" fxLayout="row" fxLayoutAlign="space-around center ">
+                                <img src="../../assets/Group 7439.svg" alt="">
+                                
+                            </div>
+    
+                        </div>
+                        <div class="option" >
+                        <a (click)="onPaymentMethodAfterpay()" fxLayout="row" fxLayoutAlign="space-between center">   
+                            <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                                <mat-radio-button value="4" (click)="onPaymentMethodAfterpay()" ></mat-radio-button>
+                                <img id="img" src="../../assets/Group 7551 (1).svg" alt="">
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="start center ">
+                                <div class="payfull">
+                                    PAY PLAN
+                                </div>
+                                <mat-icon id="icon" class="expand-more">expand_more</mat-icon>
+                            </div>
+                        </a>    
+                        </div>
+                        <div class="option-expandes-more" *ngIf="showAfterpay==true">
+                            <div class="afterpay-div" fxLayout="row" fxLayoutAlign="space-around center ">
+                                <img src="../../assets/Group 7439 (1).svg" alt="">
+                                
+                            </div>
+    
+                        </div>
+                        <div class="option" >
+                        <a (click)="onPaymentMethodAmazon()" fxLayout="row" fxLayoutAlign="space-between center">  
+                            <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
+                                <mat-radio-button value="5"   (click)="onPaymentMethodAmazon()"></mat-radio-button>
+                                <img id="img" src="../../assets/Group 6969.svg" alt="">
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="start center ">
+                                <div class="payfull">
+                                    PAY FULL
+                                </div>
+                                <mat-icon id="icon" class="expand-more">expand_more</mat-icon>
+                            </div>
+                        </a>     
+                        </div>
+                        <div class="option-expandes-more" *ngIf="showAmazon==true">
+                            <div class="website-link">
+                                <div class="text">Complete your transaction via PayPal by clicking on the button below</div>
+                                <div class="grey-text">PayPal will open in a new tab.</div>
+    
+                            </div>
+    
+                        </div>
+                        
+                    
+                    </div>
+                        
+                </div>
+                <div class="info" fxLayout="row" fxLayoutAlign="start start"><img id="info-img" src="../../assets/Group.svg" alt=""> <div class="info-text">We will set this payment method as your default, that you can change later. <img class="info-img-2" src="../../assets/Rectangle-3-_x2B_-Letters.svg" alt=""></div> </div>
+            </div>       
+        </form>
+    
+    </div>
+    <div class="img-lock" fxLayout="row" fxLayoutAlign="center start"><img  class="lock" src="../../assets/Group 7483.svg" alt=""></div>
+</div>
+<footer>
+
+    <app-returing-menu-bar [disabledBuyButton]="disabledBuyButton"></app-returing-menu-bar>
+</footer>

@@ -1,0 +1,106 @@
+*:not(#icon){
+    font-family: 'Manrope', sans-serif;
+}
+::ng-deep .mat-form-field-wrapper{
+    padding: 0px !important;
+    margin-bottom: 0.5em !important;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+}
+.text-radio-button{
+    width: 370px;
+}
+.default{
+    width: 84px !important;
+    font-size: 12px;
+    font-weight: 500;
+    color: #161616;
+    font-weight: 800;
+    border-radius: 3px;
+    text-align: center;
+}
+.option{
+    margin-bottom: 30px;
+}
+.feilds{
+    width: 100%;
+} 
+.adjusting ::ng-deep .mat-form-field-flex{
+    width: 30px;
+}
+.main{
+    padding: 0px;
+    max-width: 385px;
+  
+}
+.top{
+    margin-top:20px
+}
+h5{
+    margin-bottom: 39PX;
+    font-size:12px ;
+    font-weight: 700;
+}
+a{
+    margin-bottom: 0px;
+    
+    font-size: 12px;
+    font-weight: 400;
+}
+.close{
+
+    bottom: 56px;
+    background-color: #ECECEC;
+    /* border: 0.5px solid rgb(75, 74, 74); */
+    width:22.5px;
+    height: 22.5px;
+    text-align: center;
+    border-radius: 3PX;
+}
+#icon{
+    font-size: 18px;
+    margin-top: 2px;
+}
+.addnew{
+    color: #E71583;
+    font-size: 14px;
+    font-weight: 600;
+}
+button{
+    width: 258.5px;
+    padding: 10px 0px;
+    border: none;
+    background-color: #E71583;
+    border-radius: 2px;
+    color: white;
+}
+.feilds{
+    margin-bottom: 22px;
+}
+.button{
+    width: 333px;
+    margin-top: 18px;
+}
+button:hover{
+    filter: brightness(95%);
+}
+.noSpace{
+    margin: 0px;
+}
+@media screen and (max-width: 320px){
+    .main{
+        padding: 0px;
+        max-width: 285px;
+      
+    }
+    
+
+}
+.btn{
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: #E71583;
+    border-radius: 3px;
+    border: none;
+}

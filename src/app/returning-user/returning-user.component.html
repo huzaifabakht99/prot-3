@@ -1,0 +1,139 @@
+<!-- <header fxLayout="row" fxLayoutAlign="space-around center"><img src="../../assets/Group 7253 (1).svg" alt=""></header> -->
+<div class="main">
+    <h3>Order Review</h3>
+    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+        <div fxLayout="row" fxLayoutAlign="space-between top">
+            <div class="img"><img src="../../assets/Group 7545.svg" alt=""></div>
+            <div class="text">
+                <h6>Contact</h6>
+                <p>{{numberFromSignIn}}</p>
+            </div>
+        </div>
+        <div ><button (click)="onClickContactInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
+    </div>
+    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+        <div fxLayout="row" fxLayoutAlign="space-between top">
+            <div class="img"><img src="../../assets/Group 7492.svg" alt=""></div>
+            <div class="text" *ngIf="selectedOption=='0' || selectedOption==''">
+                <h6>Shipping Info</h6>
+                <p>Hadia Ali</p>
+                <p>545 W. 14th Street way, NY 77011</p>
+            </div>
+            <div class="text" *ngIf="selectedOption=='1'">
+                <h6>Shipping Info</h6>
+                <p>Usman Nasir</p>
+                <p>443 W. 16th Street way, LA 56433</p>
+            </div>
+            <div class="text" *ngIf="selectedOption=='2'">
+                <h6>Shipping Info</h6>
+                <p>Hadia Ali</p>
+                <p>443 W. 16th Street way, AU 64675</p>
+            </div>
+            <div class="text" *ngIf="selectedOption=='3'">
+                <h6>Shipping Info</h6>
+                <p>{{name}}</p>
+                <p>{{fullAdd}}</p>
+            </div>
+        </div>
+        <div ><button (click)="onClickShippingInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon" >expand_more</mat-icon></button></div>
+    </div>
+    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+        <div fxLayout="row" fxLayoutAlign="space-between top">
+            <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
+            <!-- <div class="text" *ngIf="deliveryCheck!='1' && deliveryCheck!='2'">
+                <h6>Delivery Type</h6>
+                <h5>Standard</h5>
+                <p>Get it between Wed, Jan 15-Thur, Jan 16</p>
+            </div> -->
+            <div class="text" *ngIf="deliveryCheck=='0' || deliveryCheck==''">
+                <h6>Delivery Type</h6>
+                <h5>Standard</h5>
+                <p>6 to 9 business days</p>
+            </div>
+            <div class="text" *ngIf="deliveryCheck=='1'">
+                <h6>Delivery Type</h6>
+                <h5>Express</h5>
+                <p>2 to 3 business days</p>
+            </div>
+            <div class="text"*ngIf="deliveryCheck=='2'">
+                <h6>Delivery Type</h6>
+                <h5>Next Day</h5>
+                <p>1 to 2 business days</p>
+            </div>
+        </div>
+        <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
+    </div>
+    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+        <div fxLayout="row" fxLayoutAlign="space-between top">
+            <div class="img"><img src="../../assets/Group 7490.svg" alt=""></div>
+            <div class="text">
+                <h6>Payment Method</h6>
+                <p *ngIf="paymentMethodCheck=='0' || paymentMethodCheck==''"><img src="../../assets/Group 774.svg" alt=""> ****4242</p>
+                <p *ngIf="paymentMethodCheck=='1'"><img id="img" src="../../assets/Group 7545 (1).svg" alt=""> ****4242</p>
+                <p *ngIf="paymentMethodCheck=='2'"><img id="img" src="../../assets/Group 7546 (1).svg" alt=""> ****4242</p>
+                <p *ngIf="paymentMethodCheck=='3'"><img id="img" src="../../assets/Group 7547 (1).svg" alt=""> ****4242</p>
+                <p *ngIf="paymentMethodCheck=='4'"><img id="img" src="../../assets/Frame.svg" alt=""> ****4242</p>
+            </div>
+        </div>
+        <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
+    </div>
+    <div class="box" fxLayout="column" fxLayoutAlign="space-between top">
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
+            <div class="grey-text">Subtotal</div>
+            <div class="text">${{subtotalAmount}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='' || deliveryCheck=='0' ">
+            <div class="grey-text">Shipping</div>
+            <div class="text">$5.95</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='1'">
+            <div class="grey-text">Shipping</div>
+            <div class="text">$12.95</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='2'">
+            <div class="grey-text">Shipping</div>
+            <div class="text">$22.95</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
+            <div class="grey-text">Tax</div>
+            <div class="text">${{taxAmount | number : '1.2-2'}}</div>
+        </div>
+        <!-- <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='0' || deliveryCheck=='' " >
+            <div class="total-text">Total</div>
+            <div class="total-text">${{subtotalAmount | number : '1.2-2'}}</div>
+        </div> -->
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck==''||deliveryCheck=='0' " >
+            <div class="total-text">Total</div>
+            <div class="total-text">${{subtotalAmount+5.95+taxAmount | number : '1.2-2'}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='1'" >
+            <div class="total-text">Total</div>
+            <div class="total-text">${{subtotalAmount+12.95+taxAmount | number : '1.2-2'}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='2'" >
+            <div class="total-text">Total</div>
+            <div class="total-text">${{subtotalAmount+22.95+taxAmount | number : '1.2-2'}}</div>
+        </div>
+
+        <!-- <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
+    </div>
+    <div class="conditions" fxLayout="row">
+        <mat-checkbox class="example-margin" [checked]="true"></mat-checkbox>
+        <div class="checkbox-space">
+            <div class="save-info-text">Save my information with 1-Click Checkout for a faster checkout next time</div>
+            <img src="../../assets/By clicking Pay, you agree to create a 1-Click Checkout account under our Terms of Use and Privacy Policy.svg" alt="" class="term">
+        </div>
+    </div>
+    <!-- <div class="buttons" fxLayout="column" fxLayoutAlign="space-between stretch" >
+        <button (click)="onPlaceOrder()" class="black button">Place Order</button>
+        <button (click)="openDialog()"  class="white button"> Cancel Order</button>
+    </div> -->
+</div>
+<div class="dummy-div"></div>
+<footer>
+    <app-returing-menu-bar></app-returing-menu-bar>
+        <!-- <div class="main-footer" fxLayout="row" fxLayoutAlign="space-between center " >
+            <button class="price-btn" fxLayout="row" fxLayoutAlign="center center ">$360 <mat-icon id="icon" class="icon">expand_less</mat-icon></button>
+            <button class="buy-btn" fxLayout="row" fxLayoutAlign="center center"  (click)="onBuy()">Buy <mat-icon id="icon" class="icon">arrow_forward</mat-icon></button>
+        </div> -->
+</footer>

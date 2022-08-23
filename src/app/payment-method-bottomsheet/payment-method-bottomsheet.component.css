@@ -1,0 +1,136 @@
+*:not(#icon){
+    font-family: 'Manrope', sans-serif;
+}
+.text-radio-button{
+    width: 370px;
+}
+.default{
+    width: 84px !important;
+    font-size: 12px;
+    font-weight: 500;
+    color: #161616;
+    font-weight: 800;
+    border-radius: 3px;
+    text-align: center;
+}
+.option{
+    margin-bottom: 30px;
+}
+.main{
+    padding: 0px;
+    max-width: 385px;
+    
+  
+}
+.top{
+    margin-top:20px
+}
+h5{
+    margin-bottom: 39PX;
+    font-size:12px ;
+    font-weight: 700;
+}
+.close{
+
+    bottom: 56px;
+    background-color: #ECECEC;
+    /* border: 0.5px solid rgb(75, 74, 74); */
+    width:22.5px;
+    height: 22.5px;
+    text-align: center;
+    border-radius: 3PX;
+}
+#icon{
+    font-size: 18px;
+    margin-top: 2px;
+}
+.addnew{
+    color: #E71583;
+    font-size: 14px;
+    font-weight: 700;
+}
+button{
+    width: 95%;
+    height: 43px;
+    border-radius: 2px;
+    justify-content: center;
+    border: none;
+    margin-bottom: 5px;
+}
+.card{
+    background-color:#EDEDED ;
+}
+.paypal{
+    background-color:#FFBE43;
+    
+}
+.klarna{
+    background-color: #FFA9C0;
+}
+.amazon{
+    background-color: #F6CE7C;
+}
+.clearpay{
+    background-color: #B2FCE3;
+}
+.methods{
+    /* max-width: 420px;
+    width: 400px; */
+    justify-content: center;
+}
+button:hover{
+    filter: brightness(95%);
+}
+@media screen and (max-width: 320px){
+    .main{
+        padding: 0px;
+        max-width: 285px;
+      
+    }
+    
+}
+
+
+.card-feilds{
+    border: none;
+    background-color: #f4f4f4;
+}
+.card-input{
+    width: 100%;
+    height:48px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 0px 13px;
+}
+.card-img{
+    padding-right:11px;
+}
+.card-number{
+    width: 110px;
+}
+.date{
+    width:120px;
+}
+.cvv{
+    width: 45px;
+}
+select{
+    border: none;
+    background-color: #f4f4f4;
+    
+}
+.select{
+    color: rgb(134, 133, 133);
+}
+.cardDiv{
+    padding-bottom: 60px;
+}
+.btn{
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: #E71583;
+    border-radius: 3px;
+    border: none;
+}

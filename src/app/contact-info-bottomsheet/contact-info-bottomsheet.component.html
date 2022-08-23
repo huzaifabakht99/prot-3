@@ -1,0 +1,78 @@
+<div class="main">
+    <div *ngIf="addNew==false">
+       <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+        <h5>CONTACT INFO</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+       </div>
+        <div >
+            <mat-radio-group aria-label="Select an option" fxLayout="column" fxLayoutAlign="space-around left">
+                <div class="options" fxLayout="column" fxLayoutAlign="start left">
+                    <div class="option" fxLayout="column" fxLayoutAlign="start left">
+                       
+                            <div fxLayout="row" fxLayoutAlign="start left">
+                                <mat-radio-button value="0" [checked]="true" (click)="onRadioSelected(numberFromSignIn)"></mat-radio-button>
+                                <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center">
+                                <div>
+                                    <p class="number">{{numberFromSignIn}}</p>
+                                </div>
+                                <div class="default">Default</div>
+                            </div>
+                            </div>
+                           <div *ngFor="let number of numbers; index as i">
+                                <div *ngIf="newDiv==true" fxLayout="row" fxLayoutAlign="start left">
+                                    <mat-radio-button value="{{i+1}}" (click)="onRadioSelected(number)"></mat-radio-button>
+                                    <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center">
+                                    <div>
+                                        <p class="number">{{number}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                       
+                    </div>
+                </div>
+            </mat-radio-group>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <a class="addnew" (click)="onAddNew()">+Add New</a>
+                <button (click)="onDone()" class="btn" fxLayout="row" fxLayoutAlign="center center">Done</button>
+            </div>
+        </div>
+    </div>
+    <div class="change-contact-info " *ngIf="addNew==true && save==false">
+        <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+            <h5>ADD NEW CONTACT</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+        </div>
+        <div class="input-feild" fxLayout="column" fxLayoutAlign="space-around left">
+            <mat-form-field appearance="outline">
+                <div fxLayout="row" fxLayoutAlign="space-around left">
+                    <img src="../../assets/Group 7554.svg" alt="">
+                <input matInput placeholder="Phone Number" [formControl]="phoneNumber">
+                <!-- <mat-error *ngIf="number.invalid">{{getErrorMessage()}}</mat-error> -->
+                </div>
+            </mat-form-field>
+            
+            
+        </div>
+        <div class="text">
+            A verification message will be sent to your new number.
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="button"><button (click)="onSave()" >Save</button></div>
+    </div>
+</div>
+<div *ngIf="save==true" >
+    <div class="top" fxLayout="row" fxLayoutAlign="space-between top">
+        <a (click)="onBack()"><mat-icon id="icon">keyboard_backspace</mat-icon></a><h5>VERIFICATION</h5><div class="close"><a (click)="onClose()"><mat-icon id="icon">close</mat-icon></a></div>
+    </div>
+    <div class="otp" fxLayout="column" fxLayoutAlign="space-between center " >
+        <h3>MObile OTP Verification</h3>
+        <h6>We Just Texted You</h6>
+        <div class="otp-text">Please enter the 4-digit verification code we
+            just sent to <b>{{phoneNumber.value}}</b> </div>
+        <!-- <input type="text" name="" id="otp-input" placeholder="****" maxlength="4"> -->
+        <div class="otp-input"><input id="partitioned" type="text"  maxlength="4"></div>
+        <div class="email-text">Didn't receive code yet? Resend Code to <span class="email">Email</span></div>
+        <a (click)="onChangeMobile()" class="change">Change Mobile Number</a>
+    </div>
+    
+
+</div>
+

@@ -1,0 +1,58 @@
+<span  class="main" class="cart-div" *ngIf="remove==false" (click)="$event.stopPropagation()">
+    <div class="cart"  >
+      <!-- <img src="../assets/Group 7548.svg" alt=""> -->
+      <div fxLayout="column" fxLayoutAlign="space-around left">
+        <h2>
+            Forever21
+        </h2>
+        <div fxLayout="row" fxLayoutAlign="space-between top">
+            <div fxLayout="row" fxLayoutAlign="start top">
+                <img class="icon" src="../../assets/Rectangle 206 (1).svg" alt="">
+                <div class="product">
+                    <div   class="text">Stretch Carrot Fit</div>
+                    <div class="text">Denim</div>
+                    <div class="quantity text">Quantity: {{quantity}}</div>
+                </div>
+            </div>
+            <div class="amount">360.00</div>
+        </div>
+      </div>
+      
+      <div class="counter-div" *ngIf="showCounter==true" fxLayout="row" fxLayoutAlign="space-between center">
+        <a (click)="onRemove()"><img src="../../assets/Group 697.svg" alt=""></a>
+        <div class="counter" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="onMinus();$event.stopPropagation()" [disabled]="quantity==0">
+                <mat-icon id="icon">remove_circle</mat-icon>
+            </button>
+            <div>{{quantity}}</div>
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="onAdd();$event.stopPropagation()">
+                <mat-icon id="icon">add_circle</mat-icon>
+            </button>
+        </div>
+    </div>
+    <hr>
+      <!-- <div><img src="../assets/Group 7550.svg" alt=""></div> -->
+      <div>
+        <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" ><div class="text">Subtotal</div><div class="amount">${{(360.00*quantity) | number : '1.2-2'}}</div></div>
+        <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==1||deliveryType==1"><div class="text">Shipping</div><div class="amount">$5.95</div></div>
+        <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==2||deliveryType==2"><div class="text">Shipping</div><div class="amount">$12.95</div></div>
+        <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==3||deliveryType==3"><div class="text">Shipping</div><div class="amount">$22.95</div></div>
+        <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center"><div class="text">Estimated Tax</div><div class="amount">${{(1.26*quantity) | number : '1.2-2'}}</div></div>
+        <div *ngIf="discount==true" class="amount-row" fxLayout="row" fxLayoutAlign="space-between center"><div class="text">Discount </div><div class="amount">-$3</div></div>
+      </div>
+      <hr>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==0&&deliveryType==0&&discount==false"><div class="total">Total</div><div class="total">${{total | number : '1.2-2'}}</div></div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==1||deliveryType==1)&&discount==false"><div class="total">Total</div><div class="total">${{total1 | number : '1.2-2'}}</div></div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==2||deliveryType==2)&&discount==false"><div class="total">Total</div><div class="total">${{total2 | number : '1.2-2'}}</div></div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==3||deliveryType==3)&&discount==false"><div class="total">Total</div><div class="total">${{total3 | number : '1.2-2'}}</div></div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==0&&deliveryType==0&&discount==true"><div class="total">Total</div><div class="total">${{total-3 | number : '1.2-2'}}</div></div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==1||deliveryType==1)&&discount==true"><div class="total">Total</div><div class="total">${{total1-3 | number : '1.2-2'}}</div></div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==2||deliveryType==2)&&discount==true"><div class="total">Total</div><div class="total">${{total2-3 | number : '1.2-2'}}</div></div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==3||deliveryType==3)&&discount==true"><div class="total">Total</div><div class="total">${{total3-3 | number : '1.2-2'}}</div></div>
+    </div>
+    <div class="button-div">
+      <button class="edit-order" (click)="onclick();$event.stopPropagation()">{{showCounter == !true ? 'Edit Order':'Done'}}</button>
+    </div>
+  </span>
+  <div class="remove" *ngIf="remove==true">Cart is Empty!</div>
