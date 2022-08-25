@@ -20,6 +20,9 @@ font-weight: 600;
 
 
 }
+button:hover{
+    filter: brightness(95%);
+  }
 
 .buy-btn{
     height: 36px;

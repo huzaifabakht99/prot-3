@@ -39,6 +39,7 @@ import { OtpReturningComponent } from './otp-returning/otp-returning.component';
 import { MainCheckoutReturningComponent } from './main-checkout-returning/main-checkout-returning.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ReturingMenuBarComponent } from './returing-menu-bar/returing-menu-bar.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -83,13 +84,18 @@ import { ReturingMenuBarComponent } from './returing-menu-bar/returing-menu-bar.
     MatBottomSheetModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    // RouterModule.forRoot(
+    //   appRoutes,
+    //   { scrollPositionRestoration: 'disabled' } // <-- HERE
+    // )
 
 
 
 
 
   ],
+  // exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

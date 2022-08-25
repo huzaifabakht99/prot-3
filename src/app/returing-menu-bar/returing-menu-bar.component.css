@@ -150,6 +150,9 @@ button:hover{
 
 
 }
+button:hover{
+    filter: brightness(95%);
+  }
 .button-div{
     min-width: 260px;
     max-width: 420px;

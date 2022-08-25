@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-order-placed',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPlacedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ref:MatDialogRef<OrderPlacedComponent>) { }
 
   ngOnInit(): void {
+  }
+  onClose(){
+    this.ref.close()
   }
 
 }

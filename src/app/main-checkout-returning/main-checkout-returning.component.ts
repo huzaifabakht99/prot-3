@@ -16,5 +16,8 @@ export class MainCheckoutReturningComponent implements OnInit {
   onClose(){
     this.dialog.open(CancelComponent)
   }
+  onActivate(){
+    window.scroll(0,0)
+  }
 
 }

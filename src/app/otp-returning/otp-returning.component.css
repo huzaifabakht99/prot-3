@@ -22,6 +22,9 @@
 input{
     border: none;
 }
+button:hover{
+    filter: brightness(95%);
+  }
 #partitioned {
     padding-left: 15px;
     letter-spacing: 25px;

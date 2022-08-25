@@ -2,8 +2,19 @@
     font-family: 'Manrope', sans-serif;
 }
 button:hover{
-    filter: brightness(80%);
+  filter: brightness(80%);
 }
 .main{
-  padding: 20px;
+padding: 20px 80px;
+}
+.btn{
+background-color: #E71583;
+border: 1px solid #E71583;
+font-size: 18px;
+font-weight: 300;
+border-radius: 10px;
+color: rgb(255, 255, 255);
+width: 90px;
+height: 32px;
+margin: 10px;
 }

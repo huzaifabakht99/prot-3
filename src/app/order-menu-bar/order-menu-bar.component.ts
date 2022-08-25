@@ -1,8 +1,10 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DataService } from '../data.service';
+import { MainCheckoutComponent } from '../main-checkout/main-checkout.component';
 import { MenuBottomsheetComponent } from '../menu-bottomsheet/menu-bottomsheet.component';
 import { OrderPlacedComponent } from '../order-placed/order-placed.component';
 import { OtpDialogComponent } from '../otp-dialog/otp-dialog.component';
@@ -33,6 +35,7 @@ export class OrderMenuBarComponent implements OnInit {
   station=''
   // price=''
   constructor(
+    private ref:MatDialogRef<MainCheckoutComponent>,
     private service:SharedService,
     public data:DataService,
     public dialog:MatDialog) { 
@@ -102,7 +105,7 @@ export class OrderMenuBarComponent implements OnInit {
     })
   }
   onOrderPlaced(){
-    this.dialog.open(OrderPlacedComponent)
+    this.ref.close()
   }
 }
 

@@ -1,2 +1,2 @@
-<header fxLayout="row" fxLayoutAlign="space-around center"><div><img src="../../assets/Group 7553 (1).svg" alt=""><img  class="logo" src="../../assets/sapphire.svg" alt=""></div></header>
-<router-outlet></router-outlet>
+<header fxLayout="row" fxLayoutAlign="space-around center"><div></div><div><img src="../../assets/Group 7553 (1).svg" alt=""><img  class="logo" src="../../assets/sapphire.svg" alt=""></div> <a (click)="onClose()"><mat-icon id="icon">clear</mat-icon></a></header>
+<router-outlet (activate)="onActivate()"></router-outlet>

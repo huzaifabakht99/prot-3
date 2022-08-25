@@ -2,6 +2,7 @@
     font-family: 'Manrope', sans-serif;
 }
 header{
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0px;
     background-color: white;
@@ -15,4 +16,10 @@ header{
     position: relative;
     bottom: 5px;
     left: 5px;
+}
+button:hover{
+    filter: brightness(95%);
+  }
+#icon{
+    color: darkgray;
 }

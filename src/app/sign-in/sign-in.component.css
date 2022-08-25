@@ -23,6 +23,9 @@ header{
     bottom: 130px; */
     color: #111111;
 }
+button:hover{
+    filter: brightness(95%);
+  }
 .enter-button{
     height: 34.65217208862305px;
 width: 109.47801971435547px;
@@ -75,7 +78,7 @@ input[type=number] {
 }
 .lock{
     position: fixed;
-    top: 311pt;
+    top: 290pt;
 }
 mat-form-field{
     width:100%

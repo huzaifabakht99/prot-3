@@ -318,6 +318,9 @@ footer{
     padding: 10px;
     color: #FBFBFB;
 }
+button:hover{
+    filter: brightness(95%);
+  }
 
 footer a{
     color: #FBFBFB;

@@ -12,6 +12,9 @@
     color: darkgray;
     
 }
+button:hover{
+    filter: brightness(95%);
+  }
 .otp{
     width: 80%;
     height: auto;

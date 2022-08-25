@@ -16,6 +16,9 @@ button{
     border: 1px black solid;
     
 }
+button:hover{
+    filter: brightness(95%);
+  }
 .buttons{
 
     margin: 20px 2.594rem 2.594rem ;

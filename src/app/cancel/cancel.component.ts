@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MainCheckoutReturningComponent } from '../main-checkout-returning/main-checkout-returning.component';
+import { MainCheckoutComponent } from '../main-checkout/main-checkout.component';
 
 @Component({
   selector: 'app-cancel',
@@ -10,7 +12,10 @@ export class CancelComponent implements OnInit {
 
   
   constructor(public dialog:MatDialog,
-    public ref:MatDialogRef<CancelComponent>) { }
+    public ref:MatDialogRef<CancelComponent>,
+    public ref2:MatDialogRef<MainCheckoutComponent>,
+    public ref3:MatDialogRef<MainCheckoutReturningComponent>
+    ) { }
 
 ngOnInit(): void {
 }
@@ -28,5 +33,10 @@ onClick(){
 this.ref.close()
 console.log('2432424242')
 }
+onClickyes(){
+  this.ref.close()
+  location.reload()
+  console.log('2432424242')
+  }
 
 }

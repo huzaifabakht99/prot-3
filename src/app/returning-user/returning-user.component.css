@@ -18,6 +18,9 @@
 mat-checkbox{
     padding-right: 8px;
 }
+button:hover{
+    filter: brightness(95%);
+  }
 .save-info-text{
   
 font-size: 12px;
