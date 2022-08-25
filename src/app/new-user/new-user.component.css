@@ -17,6 +17,34 @@ select::-ms-expand {
     padding: 13px;
     /* box-shadow: 0px 2px 5px 0px #5b5858; */
 }
+.check-point{
+    position: sticky;
+    top: 47px;
+    background-color: white;
+    
+    z-index: 999999;
+}
+.promo-text{
+    font-family: Manrope;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0.015em;
+    text-align: left;
+    color: #2BBC5D;
+    
+}
+.verify{
+    color:#E71583;
+    border: none;
+    width: 100px;
+    height: 31.65px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: #f4f4f4;
+    
+}
 .enter-button{
     height: 34.65217208862305px;
 width: 109.47801971435547px;
@@ -133,7 +161,7 @@ hr {
   }
  .check-point{
     color: #B7B7B7;
-    padding:10px 5px;
+    padding:10px 0px;
     padding-bottom: 20px;
  } 
  .circles{

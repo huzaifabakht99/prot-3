@@ -32,10 +32,10 @@ header div{
     height: 40px;
     overflow: visible;
 }
-
+/* 
 .shadow{
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.3);
-}
+} */
 
 #menu{
     min-width: 50px;
@@ -139,13 +139,19 @@ input{
 }
 
 #product{
-	max-width: 535px;
-	max-height: 752px;
-	border-radius: 10px;
+	max-width: 50%;
+
+	/* border-radius: 10px; */
 	overflow: hidden;
 	
-	grid-row: a / -1;
-	grid-column: b / d;
+	/* grid-row: a / -1;
+	grid-column: b / d; */
+}
+.product-detail{
+    width: 85%;
+}
+.detail-div{
+    padding-left: 18px;
 }
 
 #product img{
@@ -158,14 +164,15 @@ input{
 #checkoutCard{
     max-width: 400px;
     background: #FBFBFB;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border: 1px solid grey;
     
-    grid-row: c;
-    grid-column: c / e;
-    align-self: start;
+    
+    align-self: center;
 }
 
 #details{
+    display: none;
     padding: 10px;
     background: linear-gradient(#FBFBFB 40%, #D5D2DD 100%);
     border-top-left-radius: 10px;
@@ -213,7 +220,7 @@ input{
 }
 
 #thumbnail{
-    width: 175px;
+    width: 130px;
     height: auto;
 }
 
@@ -362,6 +369,7 @@ footer a:hover{
 	
 	#checkoutCard {
 		margin: auto;
+        
 	}
 	
 	footer {
@@ -381,8 +389,14 @@ footer a:hover{
     #product{
         display:none ;
     }
+    .detail-div{
+        padding-left: 0px;
+    }
     #thumbnail{
         height: 197px;
+    }
+    #details{
+        display:block;
     }
   }
   ::ng-deep .mat-dialog-container{
@@ -395,5 +409,12 @@ footer a:hover{
       width: 420pc !important;
       height: 100% !important; 
     }
+   
+}
+
+
+
+.menu-sapphire{
+    width: 100%;
 }
 

@@ -16,11 +16,11 @@ import { SharedService } from '../shared.service';
 export class OrderMenuBarComponent implements OnInit {
   @Input() disabledBuyButton=true
   quantity=1
-  totalValueProduct=360
-  total=361.26
-  total1=this.total+5.95;
-  total2=this.total+12.95;
-  total3=this.total+22.95;
+  totalValueProduct=1890
+  total=1990
+  total1=this.total+150;
+  total2=this.total+350;
+  total3=this.total+500;
   showCounter=false;
   remove=false;
   deliveryType=0
@@ -47,7 +47,7 @@ export class OrderMenuBarComponent implements OnInit {
   ngOnInit(): void {
     this.deliveryType=this.data.getDeliveryType()
     this.service.subtotalAmount(this.totalValueProduct)
-    this.service.taxAmount(1.26*this.quantity)
+    this.service.taxAmount(100*this.quantity)
     this.station= this.data.getSation()
     //  this.price=this.data.getprice()
   }
@@ -68,24 +68,24 @@ export class OrderMenuBarComponent implements OnInit {
   }
   onAdd(){
     this.quantity++
-    this.totalValueProduct=(360*this.quantity)
-    this.total=(360*this.quantity)+(1.26*this.quantity)
-    this.total1=(360*this.quantity)+(1.26*this.quantity)+5.95
-    this.total2=(360*this.quantity)+(1.26*this.quantity)+12.95
-    this.total3=(360*this.quantity)+(1.26*this.quantity)+22.95
+    this.totalValueProduct=(1890*this.quantity)
+    this.total=(1890*this.quantity)+(100*this.quantity)
+    this.total1=(1890*this.quantity)+(100*this.quantity)+150
+    this.total2=(1890*this.quantity)+(100*this.quantity)+350
+    this.total3=(1890*this.quantity)+(100*this.quantity)+500
     this.service.subtotalAmount(this.totalValueProduct)
-    this.service.taxAmount(1.26*this.quantity)
+    this.service.taxAmount(100*this.quantity)
 
   }
   onMinus(){
     this.quantity--
-    this.totalValueProduct=(360*this.quantity)
-    this.total=(360*this.quantity)+(1.26*this.quantity)
-    this.total1=(360*this.quantity)+(1.26*this.quantity)+5.95
-    this.total2=(360*this.quantity)+(1.26*this.quantity)+12.95
-    this.total3=(360*this.quantity)+(1.26*this.quantity)+22.95
+    this.totalValueProduct=(1890*this.quantity)
+    this.total=(1890*this.quantity)+(100*this.quantity)
+    this.total1=(1890*this.quantity)+(100*this.quantity)+150
+    this.total2=(1890*this.quantity)+(100*this.quantity)+350
+    this.total3=(1890*this.quantity)+(100*this.quantity)+500
     this.service.subtotalAmount(this.totalValueProduct)
-    this.service.taxAmount(1.26*this.quantity)
+    this.service.taxAmount(100*this.quantity)
   }
   onRemove(){
     this.remove=!this.remove

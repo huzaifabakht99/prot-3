@@ -39,8 +39,7 @@
                     <div class="input-feild" fxLayout="column" fxLayoutAlign="space-around left">
                         <div appearance="outline">
                             <div fxLayout="row" fxLayoutAlign="space-around left">
-                                <div id="flag"><img  src="../../assets/Group 7554.svg" alt=""></div>
-                            <input class="number" type="number" matInput placeholder="Phone Number" [formControl]="phoneNumber" maxlength="11">
+                                <div id="flag"><img  src="../../assets/flag.svg" alt=""></div>                            <input class="number" type="number" matInput placeholder="Phone Number" [formControl]="phoneNumber" maxlength="11">
                             <button mat-raised-button [disabled]="phoneNumber.value==''" (click)="onEnter()" class="enter-button">Enter</button>
                             </div>
                         </div>
@@ -276,7 +275,13 @@
         </form>
     
     </div>
-    <div class="img-lock" fxLayout="row" fxLayoutAlign="center start"><img  class="lock" src="../../assets/Group 7483.svg" alt=""></div>
+    <div class="img-lock" fxLayout="column" fxLayoutAlign="center center">
+        <div class="lock" fxLayout="column" fxLayoutAlign="center center">
+            <img  class="" src="../../assets/Group 7483.svg" alt="">
+            <div class="lock-text">Enter your Phone number above to Sign In</div>
+        </div>
+    
+    </div>
 </div>
 <footer>
 

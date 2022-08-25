@@ -10,19 +10,19 @@
 }
 .price-btn{
     height: 36px;
-width: 120px;
+width: auto;
 border-radius: 5px;
-color: black;
-background-color: white;
+color: rgb(255, 255, 255);
+background-color:#E72E80 ;
 border: none;
 font-size: 16px;
-font-weight: 500;
+font-weight: 600;
 
 
 }
 
 .buy-btn{
-    height: 36px;
+    height: auto;
 width: 120px;
 border-radius: 5px;
 color: white;

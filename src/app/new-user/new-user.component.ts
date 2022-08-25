@@ -14,6 +14,8 @@ import { SharedService } from '../shared.service';
 })
 export class NewUserComponent implements OnInit {
   billingAddress=true
+  showPromo=false
+  promo= new FormControl('')
   
   toSelectRadio=false
   showCard=false
@@ -138,6 +140,10 @@ export class NewUserComponent implements OnInit {
   onClickCheckBox(){
     this.billingAddress=!this.billingAddress
     console.log(this.billingAddress)
+  }
+  onClickPromo(){
+    this.data.setDeliveryType(this.selectedRadio)
+    this.showPromo=!this.showPromo
   }
 
 }

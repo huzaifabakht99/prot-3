@@ -1,8 +1,10 @@
 <div class="main" fxLayout="row" fxLayoutAlign="space-between center " >
-    <button mat-raised-button class="price-btn" fxLayout="row" fxLayoutAlign="center center " [matMenuTriggerFor]="beforeMenu"><span *ngIf="(deliveryType==0&&selectedOpt==0)">${{total1 | number : '1.2-2'}}</span><span *ngIf="deliveryType==1||selectedOpt==1">${{total+5.95}}</span><span *ngIf="deliveryType==2||selectedOpt==2">${{total+12.95}}</span><span *ngIf="deliveryType==3||selectedOpt==3">${{total+22.95}}</span> <mat-icon id="icon" class="icon-btn">expand_less</mat-icon></button>
+  <!-- <button mat-raised-button class="price-btn" fxLayout="row" fxLayoutAlign="center center " [matMenuTriggerFor]="beforeMenu">Cart Detail<mat-icon id="icon" class="icon-btn">expand_less</mat-icon></button> -->
+
+    <button mat-raised-button class="price-btn" fxLayout="row" fxLayoutAlign="center center " [matMenuTriggerFor]="beforeMenu"><mat-icon id="icon">shopping_cart</mat-icon><span *ngIf="(deliveryType==0&&selectedOpt==0)">Rs {{total1 | number : '1.2-2'}}</span><span *ngIf="deliveryType==1||selectedOpt==1">Rs {{total+150}}</span><span *ngIf="deliveryType==2||selectedOpt==2">Rs {{total+350}}</span><span *ngIf="deliveryType==3||selectedOpt==3">Rs {{total+500}}</span> </button>
     <button mat-raised-button class="buy-btn" fxLayout="row" fxLayoutAlign="center center " (click)="onBuy()" *ngIf="station=='signIn'" [disabled]="true">Buy <mat-icon id="icon" class="icon-btn">arrow_forward</mat-icon></button>
     <button mat-raised-button class="buy-btn" fxLayout="row" fxLayoutAlign="center center " (click)="onBuy()" *ngIf="station=='newUser'">Buy <mat-icon id="icon" class="icon-btn">arrow_forward</mat-icon></button>
-    <button mat-raised-button class="buy-btn" fxLayout="row" fxLayoutAlign="center center " (click)="onOrderPlaced()"  *ngIf="station=='orderDetail'">Buy <mat-icon id="icon" class="icon-btn">arrow_forward</mat-icon></button>
+    <button mat-raised-button class="buy-btn" fxLayout="row" fxLayoutAlign="center center " (click)="onOrderPlaced()"  *ngIf="station=='orderDetail'">Return Home <mat-icon id="icon" class="icon-btn">arrow_forward</mat-icon></button>
 
 </div>
 <mat-menu #beforeMenu="matMenu" yPosition="above">
@@ -12,18 +14,18 @@
         <!-- <img src="../assets/Group 7548.svg" alt=""> -->
         <div fxLayout="column" fxLayoutAlign="space-around left">
           <h2>
-              Forever21
+              ELO
           </h2>
           <div fxLayout="row" fxLayoutAlign="space-between top">
               <div fxLayout="row" fxLayoutAlign="start top">
-                  <img class="icon" src="../../assets/pexels-damian-barczak-8830049.jpg" alt="">
+                  <img class="icon" src="../../assets/Screenshot 2022-08-24 at 11.48.50 AM.png" alt="">
                   <div class="product">
                       <div   class="text">Stretch Carrot Fit</div>
                       <div class="text">Denim</div>
                       <div class="quantity text">Quantity: {{quantity}}</div>
                   </div>
               </div>
-              <div class="amount">$29.00</div>
+              <div class="amount">Rs 1099.00</div>
           </div>
         </div>
         
@@ -42,23 +44,23 @@
       <hr>
         <!-- <div><img src="../assets/Group 7550.svg" alt=""></div> -->
         <div>
-          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" ><div class="text">Subtotal</div><div class="amount">${{(29.00*quantity) | number : '1.2-2'}}</div></div>
-          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==1||deliveryType==1||selectedOpt==0||deliveryType==0"><div class="text">Shipping</div><div class="amount">$5.95</div></div>
-          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==2||deliveryType==2"><div class="text">Shipping</div><div class="amount">$12.95</div></div>
-          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==3||deliveryType==3"><div class="text">Shipping</div><div class="amount">$22.95</div></div>
-          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center"><div class="text">{{selectedOpt==0&&deliveryType==0  ? 'Estimated Tax':'Tax'}}</div><div class="amount">${{(0.26*quantity) | number : '1.2-2'}}</div></div>
+          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" ><div class="text">Subtotal</div><div class="amount">Rs {{(1099.00*quantity) | number : '1.2-2'}}</div></div>
+          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==1||deliveryType==1||selectedOpt==0||deliveryType==0"><div class="text">Shipping</div><div class="amount">Rs 150</div></div>
+          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==2||deliveryType==2"><div class="text">Shipping</div><div class="amount">Rs 350</div></div>
+          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==3||deliveryType==3"><div class="text">Shipping</div><div class="amount">Rs 500</div></div>
+          <div class="amount-row" fxLayout="row" fxLayoutAlign="space-between center"><div class="text">{{selectedOpt==0&&deliveryType==0  ? 'Estimated Tax':'Tax'}}</div><div class="amount">Rs {{(50*quantity) | number : '1.2-2'}}</div></div>
           <div *ngIf="discount==true" class="amount-row" fxLayout="row" fxLayoutAlign="space-between center"><div class="text">Discount </div><div class="amount">-$3</div></div>
         </div>
         <hr>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==0&&deliveryType==0&&discount==false"><div class="total">Total</div><div class="total">${{total1 | number : '1.2-2'}}</div></div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==1||deliveryType==1)&&discount==false"><div class="total">Total</div><div class="total">${{total1 | number : '1.2-2'}}</div></div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==2||deliveryType==2)&&discount==false"><div class="total">Total</div><div class="total">${{total2 | number : '1.2-2'}}</div></div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==3||deliveryType==3)&&discount==false"><div class="total">Total</div><div class="total">${{total3 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==0&&deliveryType==0&&discount==false"><div class="total">Total</div><div class="total">Rs{{total1 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==1||deliveryType==1)&&discount==false"><div class="total">Total</div><div class="total">Rs {{total1 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==2||deliveryType==2)&&discount==false"><div class="total">Total</div><div class="total">Rs {{total2 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==3||deliveryType==3)&&discount==false"><div class="total">Total</div><div class="total">Rs {{total3 | number : '1.2-2'}}</div></div>
   
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==0&&deliveryType==0&&discount==true"><div class="total">Total</div><div class="total">${{total-3 | number : '1.2-2'}}</div></div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==1||deliveryType==1)&&discount==true"><div class="total">Total</div><div class="total">${{total1-3 | number : '1.2-2'}}</div></div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==2||deliveryType==2)&&discount==true"><div class="total">Total</div><div class="total">${{total2-3 | number : '1.2-2'}}</div></div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==3||deliveryType==3)&&discount==true"><div class="total">Total</div><div class="total">${{total3-3 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="selectedOpt==0&&deliveryType==0&&discount==true"><div class="total">Total</div><div class="total">Rs {{total-3 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==1||deliveryType==1)&&discount==true"><div class="total">Total</div><div class="total">Rs {{total1-3 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==2||deliveryType==2)&&discount==true"><div class="total">Total</div><div class="total">Rs {{total2-3 | number : '1.2-2'}}</div></div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="(selectedOpt==3||deliveryType==3)&&discount==true"><div class="total">Total</div><div class="total">Rs {{total3-3 | number : '1.2-2'}}</div></div>
       </div>
       <div class="button-div">
         <button class="edit-order" (click)="onclick();$event.stopPropagation()">{{showCounter == !true ? 'Edit Order':'Done'}}</button>

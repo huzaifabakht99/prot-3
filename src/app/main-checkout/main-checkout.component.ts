@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CancelComponent } from '../cancel/cancel.component';
 
 @Component({
   selector: 'app-main-checkout',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainCheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
 
   ngOnInit(): void {
+  }
+  onClose(){
+    this.dialog.open(CancelComponent)
   }
 
 }

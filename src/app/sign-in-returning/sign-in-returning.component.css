@@ -25,6 +25,15 @@ border: none;
 
 
 }
+.lock-text{
+    width: 256px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    /* position: fixed;
+    bottom: 130px; */
+    color: #111111;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

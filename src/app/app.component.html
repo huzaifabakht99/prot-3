@@ -1,43 +1,61 @@
 <div class="main-secteion" class="sapphire" fxLayout="column" fxlaoutAlign="center center">
     <mat-tab-group mat-align-tabs="center">
         <mat-tab label="New User">
-            <section class="elo" fxLayout="row" fxlaoutAlign="space-around center">
-                <article id="checkoutCard" class="shadow">
-                    <div id="details">
-                        <dl class="">
-                            <dt>Product</dt>
-                            <dd id="thumbnail"> <img id="thumbnail" src="../assets/Rectangle 206.svg" alt="Lunar 2"></dd>
-                            <dt>Quantity</dt>
-                            <dd> <input type="number" value="1"> </dd>
-                            <dt>Price</dt>
-                            <dd> $360.00 </dd>
-                        </dl>
+            <section class="sapphire" fxLayout="column" fxlaoutAlign="space-around center">
+                <img class="menu-sapphire" src="../assets/Screenshot 2022-08-23 at 2.44.11 PM.png" alt="">
+                <div fxLayout="row" fxlaoutAlign="space-between end">
+                    <article id="product"><img src="../assets/Screenshot 2022-08-23 at 4.10.21 PM.png" alt="Lunar 2"></article>
+                    <div class="detail-div">
+                        <img class="product-detail" src="../assets/Screenshot 2022-08-24 at 11.22.41 AM.png" alt="">
+                        <article id="checkoutCard" class="shadow">
+                            <div id="details">
+                                <dl class="">
+                                    <dt>Detail</dt>
+                                    <dd id="thumbnail"> <img id="thumbnail" src="../assets/Screenshot 2022-08-23 at 4.42.56 PM.png" alt="Lunar 2"></dd>
+                                    <dt></dt>
+                                    <dd> <input type="number" value="1"> </dd>
+                                    <dt></dt>
+                                    <dd> Rs 1890.00 </dd>
+                                </dl>
+                            </div>
+                        <button (click)="openDialog()" type="submit" routerLink="main-checkout" id="btnSubmit"><img src="../assets/Group 7549111.svg" alt=""></button>
+                        </article>
+                        <img class="product-detail" src="../assets/Screenshot 2022-08-23 at 4.12.19 PM.png" alt="">
                     </div>
-                <button (click)="openDialog()" type="submit" routerLink="main-checkout" id="btnSubmit"><img src="../assets/Group 7549111.svg" alt=""></button>
-                </article>
+                </div>
             
             </section>
     
         </mat-tab>
         <mat-tab label="Returning User" >
-    
-            <section class="sapphire" fxLayout="row" fxlaoutAlign="center center">
-                <article id="checkoutCard" class="shadow">
-                    <!-- <img class="barand-logo" src="../assets/imgbin_sapphire-clothing-fashion-brand-textile-png.png" alt=""> -->
-                    <div id="details">
-                        <dl class="">
-                            <dt>Product</dt>
-                            <dd id="thumbnail"> <img id="thumbnail" src="../assets/pexels-damian-barczak-8830049.jpg" alt="Lunar 2"></dd>
-                            <dt>Quantity</dt>
-                            <dd> <input type="number" value="1"> </dd>
-                            <dt>Price</dt>
-                            <dd> $29.00 </dd>
-                        </dl>
+
+            <section class="elo" fxLayout="column" fxlaoutAlign="space-around center">
+                <img class="menu-sapphire" src="../assets/Screenshot 2022-08-24 at 11.31.51 AM.png" alt="">
+                <div fxLayout="row" fxlaoutAlign="space-between end">
+                    <article id="product"><img src="../assets/Screenshot 2022-08-24 at 11.33.05 AM.png" alt="Lunar 2"></article>
+                    <div class="detail-div">
+                        <img class="product-detail" src="../assets/Screenshot 2022-08-24 at 11.33.48 AM.png" alt="">
+                        <article id="checkoutCard" class="shadow">
+                            <!-- <img class="barand-logo" src="../assets/imgbin_sapphire-clothing-fashion-brand-textile-png.png" alt=""> -->
+                            <div id="details">
+                                <dl class="">
+                                    <dt>Detail</dt>
+                                    <dd id="thumbnail"> <img id="thumbnail" src="../assets/Screenshot 2022-08-24 at 11.48.50 AM.png" alt="Lunar 2"></dd>
+                                    <dt></dt>
+                                    <dd> <input type="number" value="1"> </dd>
+                                    <dt></dt>
+                                    <dd> Rs 1099.00 </dd>
+                                </dl>
+                            </div>
+                        <button (click)="openDialogReturning()" type="submit" routerLink="main-checkout-returning" id="btnSubmit"><img src="../assets/Group 7549111.svg" alt=""></button>
+                        </article>
+                        <img class="product-detail" src="../assets/Screenshot 2022-08-24 at 11.34.35 AM.png" alt="">
                     </div>
-                <button (click)="openDialogReturning()" type="submit" routerLink="main-checkout-returning" id="btnSubmit"><img src="../assets/Group 7549111.svg" alt=""></button>
-                </article>
+                </div>
             
             </section>
+    
+            
         </mat-tab>
       </mat-tab-group>
 </div>

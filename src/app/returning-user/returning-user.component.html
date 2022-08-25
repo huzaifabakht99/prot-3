@@ -80,23 +80,23 @@
     <div class="box" fxLayout="column" fxLayoutAlign="space-between top">
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
             <div class="grey-text">Subtotal</div>
-            <div class="text">${{subtotalAmount}}</div>
+            <div class="text">Rs {{subtotalAmount}}</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='' || deliveryCheck=='0' ">
             <div class="grey-text">Shipping</div>
-            <div class="text">$5.95</div>
+            <div class="text">Rs 150</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='1'">
             <div class="grey-text">Shipping</div>
-            <div class="text">$12.95</div>
+            <div class="text">Rs 350</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='2'">
             <div class="grey-text">Shipping</div>
-            <div class="text">$22.95</div>
+            <div class="text">Rs 500</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
             <div class="grey-text">Tax</div>
-            <div class="text">${{taxAmount | number : '1.2-2'}}</div>
+            <div class="text">Rs {{taxAmount | number : '1.2-2'}}</div>
         </div>
         <!-- <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='0' || deliveryCheck=='' " >
             <div class="total-text">Total</div>
@@ -104,15 +104,15 @@
         </div> -->
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck==''||deliveryCheck=='0' " >
             <div class="total-text">Total</div>
-            <div class="total-text">${{subtotalAmount+5.95+taxAmount | number : '1.2-2'}}</div>
+            <div class="total-text">Rs {{subtotalAmount+150+taxAmount | number : '1.2-2'}}</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='1'" >
             <div class="total-text">Total</div>
-            <div class="total-text">${{subtotalAmount+12.95+taxAmount | number : '1.2-2'}}</div>
+            <div class="total-text">Rs {{subtotalAmount+350+taxAmount | number : '1.2-2'}}</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line" *ngIf="deliveryCheck=='2'" >
             <div class="total-text">Total</div>
-            <div class="total-text">${{subtotalAmount+22.95+taxAmount | number : '1.2-2'}}</div>
+            <div class="total-text">Rs {{subtotalAmount+500+taxAmount | number : '1.2-2'}}</div>
         </div>
 
         <!-- <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->

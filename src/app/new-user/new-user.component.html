@@ -1,6 +1,5 @@
 
-
-<div class="sign-in-div">
+<div class="main">
     <div class="check-point" fxLayout="row" fxLayoutAlign="space-between center">
         <div fxLayout="column" fxLayoutAlign="center center">
             <div>
@@ -39,7 +38,8 @@
                 <div class="input-feild" fxLayout="column" fxLayoutAlign="space-around left">
                     <div appearance="outline">
                         <div fxLayout="row" fxLayoutAlign="space-around left">
-                            <div id="flag"><img  src="../../assets/Group 7554.svg" alt=""></div>
+                            
+                            <div id="flag"><img  src="../../assets/flag.svg" alt=""></div>
                         <input class="number" type="number" matInput placeholder="Phone Number" [formControl]="phoneNumber" maxlength="11">
                         <!-- <button mat-raised-button [disabled]="phoneNumber.value==''" class="enter-button">Enter</button> -->
                         </div>
@@ -48,8 +48,6 @@
                 </div>
     
         </div>
-</div>
-<div class="main">
    <form>
     
         <div class="shadow">
@@ -122,21 +120,21 @@
                         <div class="options" fxLayout="row" fxLayoutAlign="start left" [ngStyle]="{'border': selectedRadio==1 ? 'black' : '#C2C2C2' }">
                             <mat-radio-button value="1" [checked]="true" (click)="onSelectRadio1()"></mat-radio-button>
                             <div class="text-radio-button" >
-                                <h4>Standard <span class="delivery-days"> (6 to 9 business days) </span> $5.95</h4>
+                                <h4>Standard <span class="delivery-days"> (6 to 9 business days) </span> Rs 150</h4>
                                 <p>Order within <span class="dateNtime">6 hrs 1 min</span> to get it by <span class="dateNtime">Thurs, Jan 16</span></p>
                             </div>
                         </div>
                         <div class="options" fxLayout="row" fxLayoutAlign="start left" [ngStyle]="{'border': selectedRadio==2 ? 'black' : '#C2C2C2' }">
                             <mat-radio-button value="2" (click)="onSelectRadio2()"></mat-radio-button>
                         <div class="text-radio-button">
-                            <h4>Express <span class="delivery-days"> (2 to 3 business days) </span>$12.95</h4>
+                            <h4>Express <span class="delivery-days"> (2 to 3 business days) </span>Rs 350</h4>
                             <p>Order within  <span class="dateNtime">6 hrs 1 min</span> to get it by <span class="dateNtime">Mon, Jan 13</span></p>
                         </div>
                         </div>
                         <div class="options" fxLayout="row" fxLayoutAlign="start left" [ngStyle]="{'border': selectedRadio==3 ? 'black' : '#C2C2C2' }">
                             <mat-radio-button value="3" (click)="onSelectRadio3()" ></mat-radio-button>
                             <div class="text-radio-button">
-                                <h4>Next day<span class="delivery-days"> (1 to 2 days) </span> $22.95</h4>
+                                <h4>Next day<span class="delivery-days"> (1 to 2 days) </span> Rs 500</h4>
                                 <p>Order within <span class="dateNtime">6 hrs 1 min </span>to get it by <span class="dateNtime">Thurs, Jan 09</span></p>
                             </div>
                         </div> 
@@ -302,7 +300,17 @@
                     
                 
                 </div>
+                
                     
+            </div>
+            <div class="input-feild" fxLayout="row" fxLayoutAlign="space-between center">
+                <input class="otp-feild" matInput placeholder=" Enter Promo Code" [formControl]="promo">
+                <button  (click)="onClickPromo()" [ngStyle]="{'color': promo.value =='' ? '#696969' : '#E71583' }"class="verify">Apply</button>
+            </div> 
+            <div *ngIf="showPromo==true" class="promo" >
+                <!-- <img src="../../assets/Promo Code Added! Please review your order detail for updated cart before making the payment..svg" alt=""> -->
+                <div class="promo-text">Promo Code Added! Please review your order detail for updated 
+                    cart before making the payment.</div>
             </div>
             <div class="info" fxLayout="row" fxLayoutAlign="start start"><img id="info-img" src="../../assets/Group.svg" alt=""> <div class="info-text">We will set this payment method as your default, that you can change later. <img class="info-img-2" src="../../assets/Rectangle-3-_x2B_-Letters.svg" alt=""></div> </div>
         </div>       

@@ -14,6 +14,15 @@ header{
     padding: 13px;
     box-shadow: 0px 14px 15px 0px #5b5858;
 }
+.lock-text{
+    width: 256px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    /* position: fixed;
+    bottom: 130px; */
+    color: #111111;
+}
 .enter-button{
     height: 34.65217208862305px;
 width: 109.47801971435547px;
