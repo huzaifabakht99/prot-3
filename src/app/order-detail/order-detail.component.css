@@ -104,12 +104,16 @@ button:hover{
 .img{
     margin-right: 12px;
 }
-
+.box-space{
+    margin-bottom: 18px;
+}
 .box{
     width: 85%;
+    box-sizing: border-box;
     height: auto;
     border-radius: 6px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: 1px solid #E0E0E0;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
     padding: 11px;
     margin: 4px 0px;
 }

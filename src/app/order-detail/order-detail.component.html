@@ -11,7 +11,8 @@
         <img src="../../assets/Untitled-1-02 1.svg" alt="" class="a">
         <img src="../../assets/Group 7489.svg" alt="" class="b">
         <!-- <div class="gif-div"><img class="gif" src="../../assets/3-steps.gif" alt=""></div> -->
-        <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+       <div class="box">
+        <div class="box-space" fxLayout="row" fxLayoutAlign="space-between top">
             <div class="contact-div" fxLayout="row" fxLayoutAlign="space-between end">
                 <div fxLayout="row" fxLayoutAlign="space-between top">
                     <div class="img"><img src="../../assets/Group 7545.svg" alt=""></div>
@@ -29,7 +30,7 @@
             </div>
             <!-- <div ><button (click)="onClickContactInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
         </div>
-        <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+        <div class="box-space" fxLayout="row" fxLayoutAlign="space-between top">
             <div fxLayout="row" fxLayoutAlign="space-between top">
                 <div class="img"><img src="../../assets/Group 7492.svg" alt=""></div>
                 <div class="text">
@@ -40,7 +41,7 @@
             </div>
             <!-- <div ><button (click)="onClickShippingInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon" >expand_more</mat-icon></button></div> -->
         </div>
-        <div class="box" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==1||radio==0">
+        <div class="box-space" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==1||radio==0">
             <div fxLayout="row" fxLayoutAlign="space-between top">
                 <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
                 <div class="text">
@@ -51,7 +52,7 @@
             </div>
             <!-- <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
         </div>
-        <div class="box" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==2">
+        <div  class="box-space" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==2">
             <div fxLayout="row" fxLayoutAlign="space-between top">
                 <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
                 <div class="text">
@@ -62,7 +63,7 @@
             </div>
             <!-- <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
         </div>
-        <div class="box" fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==3">
+        <div class="box-space"  fxLayout="row" fxLayoutAlign="space-between top" *ngIf="radio==3">
             <div fxLayout="row" fxLayoutAlign="space-between top">
                 <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
                 <div class="text">
@@ -73,7 +74,7 @@
             </div>
             <!-- <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
         </div>
-        <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+        <div  class="box-space" fxLayout="row" fxLayoutAlign="space-between top">
             <div fxLayout="row" fxLayoutAlign="space-between top">
                 <div class="img"><img src="../../assets/Group 7490.svg" alt=""></div>
                 <div class="text">
@@ -86,6 +87,7 @@
             </div>
             <!-- <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div> -->
         </div>
+       </div>
         <div class="box" fxLayout="column" fxLayoutAlign="space-between top">
             <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
                 <div class="grey-text">Subtotal</div>
