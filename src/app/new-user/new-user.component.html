@@ -10,7 +10,7 @@
             </div>
         </div>
         <hr *ngIf="selectedMethod==''">
-        <hr class="pink" *ngIf="selectedMethod =='card' || selectedMethod =='klarna' || selectedMethod =='paypal' || selectedMethod =='amazon'">
+        <hr class="pink" *ngIf="selectedMethod =='card' || selectedMethod =='klarna' || selectedMethod =='paypal' || selectedMethod =='amazon'|| selectedMethod =='clearpay'">
         <div fxLayout="column" fxLayoutAlign="center center">
             <div>
                 <mat-icon [ngStyle]="{'color': selectedMethod =='card' || selectedMethod =='klarna' || selectedMethod =='paypal' || selectedMethod =='amazon' ?  '#E71583': '#B7B7B7' }" id="icon" class="circles">lens</mat-icon>
@@ -29,25 +29,25 @@
             </div>
         </div>
     </div>
-        <div class="sign-in">
+        <!-- <div class="sign-in">
             <h2 class="center">Start your Checkout!</h2>
             <div class="text">Enter your phone number below to start with the checkout 
-            process.</div>
+            process.</div> -->
             <!-- formfield -->
             
-                <div class="input-feild" fxLayout="column" fxLayoutAlign="space-around left">
+                <!-- <div class="input-feild" fxLayout="column" fxLayoutAlign="space-around left">
                     <div appearance="outline">
                         <div fxLayout="row" fxLayoutAlign="space-around left">
                             
                             <div id="flag"><img  src="../../assets/flag.svg" alt=""></div>
-                        <input class="number" type="number" matInput placeholder="Phone Number" [formControl]="phoneNumber" maxlength="11">
+                        <input class="number" type="number" matInput placeholder="Phone Number" [formControl]="phoneNumber" maxlength="11"> -->
                         <!-- <button mat-raised-button [disabled]="phoneNumber.value==''" class="enter-button">Enter</button> -->
-                        </div>
+                        <!-- </div>
                     </div>
                     
                 </div>
     
-        </div>
+        </div> -->
    <form>
     
         <div class="shadow">
@@ -85,7 +85,7 @@
                     <!-- checkbox -->
                     <mat-checkbox  [checked]="billingAddress"><div class="same-billing-add">My billing address is same as shipping.</div></mat-checkbox>
                 </div>
-                <div  class="feilds manual-address" fxLayout="column" fxLayoutAlign="space-around left" *ngIf="billingAddress==false">
+                <div  class="feilds manual-address" fxLayout="column" fxLayoutAlign="space-around left" *ngIf="billingAddress==true&& allow==true">
                     <mat-form-field appearance="outline">
                         <mat-label>Address Line 1</mat-label>
                         <input matInput placeholder="Address Line 1" >
@@ -94,18 +94,26 @@
                         <mat-label> Address Line 2 (Optional)</mat-label>
                         <input matInput placeholder="Address Line 2">
                       </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>City</mat-label>
-                        <input matInput placeholder="City">
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>Country</mat-label>
-                        <input matInput placeholder="Country" >
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>Zip Code</mat-label>
-                        <input matInput placeholder="Zip Code">
-                      </mat-form-field>
+                     <div fxLayout="row" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="City">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" class="formSpace">
+                            <mat-label>Province</mat-label>
+                            <input matInput placeholder="City">
+                          </mat-form-field>
+                     </div>
+                      <div fxLayout="row" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Country</mat-label>
+                            <input matInput placeholder="Country" >
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" class="formSpace">
+                            <mat-label>Zip Code</mat-label>
+                            <input matInput placeholder="Zip Code">
+                          </mat-form-field>
+                      </div>
                 </div>
                 
 
@@ -149,7 +157,7 @@
                     <div class="option" >
                     <a (click)="onPaymentMethodCard()" fxLayout="row" fxLayoutAlign="space-between center">   
                         <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
-                            <mat-radio-button value="1" [checked]="true"  ></mat-radio-button>
+                            <mat-radio-button value="1" [checked]="showCard"  ></mat-radio-button>
                             <img id="img" src="../../assets/Group 6939.svg" alt="">
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start center ">
@@ -198,7 +206,7 @@
                                     <option value="audi">28</option>
                                 </select>
                             </div>
-                            <div class="cvv-div"><input type="text" class="card-feilds cvv" placeholder="CVV" maxlength="3"><img src="../../assets/Vector.svg" alt=""> </div>
+                            <div class="cvv-div"><input type="password" class="card-feilds cvv" placeholder="CVV" maxlength="3"><img src="../../assets/Vector.svg" alt=""> </div>
                         </div>
                     </div>
                     
@@ -206,7 +214,7 @@
                     <div class="option" >
                     <a (click)="onPaymentMethodPaypal()" fxLayout="row" fxLayoutAlign="space-between center">  
                         <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
-                            <mat-radio-button value="2"></mat-radio-button>
+                            <mat-radio-button value="2" [checked]="showPaypal"></mat-radio-button>
                             <img id="img" src="../../assets/Group 6943.svg" alt="">
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start center ">
@@ -230,7 +238,7 @@
                     <div class="option" >
                     <a (click)="onPaymentMethodKlarna()" fxLayout="row" fxLayoutAlign="space-between center">   
                         <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
-                            <mat-radio-button value="3"    ></mat-radio-button>
+                            <mat-radio-button value="3"    [checked]="showKlarna"></mat-radio-button>
                             <img id="img" src="../../assets/Group 7552.svg" alt="">
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start center ">
@@ -253,7 +261,7 @@
                     <div class="option" >
                     <a (click)="onPaymentMethodAfterpay()" fxLayout="row" fxLayoutAlign="space-between center">   
                         <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
-                            <mat-radio-button value="4"  ></mat-radio-button>
+                            <mat-radio-button value="4"  [checked]="showAfterpay"></mat-radio-button>
                             <img id="img" src="../../assets/Group 7551 (1).svg" alt="">
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start center ">
@@ -276,7 +284,7 @@
                     <div class="option" >
                     <a (click)="onPaymentMethodAmazon()" fxLayout="row" fxLayoutAlign="space-between center">  
                         <div class="text-radio-button" fxLayout="row" fxLayoutAlign="space-between center ">
-                            <mat-radio-button value="5"   ></mat-radio-button>
+                            <mat-radio-button value="5"   [checked]="showAmazon"></mat-radio-button>
                             <img id="img" src="../../assets/Group 6969.svg" alt="">
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start center ">
@@ -318,7 +326,7 @@
 <div class="dummy-div"></div>
 </div>
 <footer>
-<app-order-menu-bar></app-order-menu-bar>
+<app-order-menu-bar [discount]="discount"></app-order-menu-bar>
     <!-- <div class="main-footer" fxLayout="row" fxLayoutAlign="space-between center " >
         <button class="price-btn" fxLayout="row" fxLayoutAlign="center center ">$360 <mat-icon id="icon" class="icon">expand_less</mat-icon></button>
         <button class="buy-btn" fxLayout="row" fxLayoutAlign="center center"  (click)="onBuy()">Buy <mat-icon id="icon" class="icon">arrow_forward</mat-icon></button>

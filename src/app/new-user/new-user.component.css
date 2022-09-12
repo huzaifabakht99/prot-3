@@ -58,6 +58,11 @@ font-weight: 600;
 
 
 }
+
+/* ::ng-deep .RadioPosition{
+    position: relative;
+    bottom: 13px;
+} */
 input:focus, textarea:focus, select:focus{
     outline: none;
 }
@@ -134,7 +139,8 @@ color: #6B6B6B;
 .enter-address-manually{
     margin-bottom: 25px;
     margin-top: 14px;
-    color: #59B9AF;
+    color: #E71583;
+    text-decoration: underline;
 }
 .check-box{
     margin-bottom: 30px;
@@ -223,6 +229,9 @@ padding-bottom:0em ;
     
 
 }
+.formSpace{
+    padding-left: 10px;
+}
 .delivery-days{
     font-size: 12px !important;
 }
@@ -246,6 +255,9 @@ p{
 }
 
 /* Payment method */
+.payment-method-div{
+    margin-bottom: 10px;
+}
 .expand-more{
 margin-left: 14px;
 }
@@ -275,6 +287,9 @@ color: #111111;
 .card-feilds{
     border: none;
     background-color: #f4f4f4;
+}
+ ::ng-deep .mat-form-field-infix{
+    width: auto;
 }
 .card-input{
     width: 100%;

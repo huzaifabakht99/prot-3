@@ -16,6 +16,7 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./order-menu-bar.component.css']
 })
 export class OrderMenuBarComponent implements OnInit {
+  
   @Input() disabledBuyButton=true
   quantity=1
   totalValueProduct=1890
@@ -91,6 +92,7 @@ export class OrderMenuBarComponent implements OnInit {
     this.service.taxAmount(100*this.quantity)
   }
   onRemove(){
+   
     this.remove=!this.remove
     this.total=0;
     this.total1=0;

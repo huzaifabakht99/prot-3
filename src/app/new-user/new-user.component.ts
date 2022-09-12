@@ -13,6 +13,7 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
+  allow=false
   billingAddress=true
   showPromo=false
   promo= new FormControl('')
@@ -24,6 +25,8 @@ export class NewUserComponent implements OnInit {
   showAfterpay=false
   showAmazon=false
   selectedMethod=''
+  discount=false
+  trueRadio=false
  
 
   isCheckedDelivery=false
@@ -86,6 +89,7 @@ export class NewUserComponent implements OnInit {
     this.showAmazon=false
     this.showKlarna=false
     this.showPaypal=false
+    this.trueRadio=true
 
     this.selectedMethod='card'
     this.data.setSelectedMethod(this.selectedMethod)
@@ -95,6 +99,7 @@ export class NewUserComponent implements OnInit {
     
   }
   onPaymentMethodPaypal(){
+    this.trueRadio=true
     this.showCard=false
     this.showAfterpay=false
     this.showAmazon=false
@@ -105,6 +110,7 @@ export class NewUserComponent implements OnInit {
     
   }
   onPaymentMethodKlarna(){
+    this.trueRadio=true
     this.showCard=false
     this.showAfterpay=false
     this.showAmazon=false
@@ -114,6 +120,7 @@ export class NewUserComponent implements OnInit {
     this.data.setSelectedMethod(this.selectedMethod)
   }
   onPaymentMethodAfterpay(){
+    this.trueRadio=true
     this.showCard=false
     this.showAfterpay=!this.showAfterpay
     this.showAmazon=false
@@ -123,6 +130,7 @@ export class NewUserComponent implements OnInit {
     this.data.setSelectedMethod(this.selectedMethod)
   }
   onPaymentMethodAmazon(){
+    this.trueRadio=true
     this.showCard=false
     this.showAfterpay=false
     this.showAmazon=!this.showAmazon
@@ -139,11 +147,13 @@ export class NewUserComponent implements OnInit {
   }
   onClickCheckBox(){
     this.billingAddress=!this.billingAddress
+    this.allow=true
     console.log(this.billingAddress)
   }
   onClickPromo(){
     this.data.setDeliveryType(this.selectedRadio)
     this.showPromo=!this.showPromo
+    this.discount=!this.discount
   }
 
 }

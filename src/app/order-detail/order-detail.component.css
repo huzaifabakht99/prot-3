@@ -70,7 +70,8 @@ padding-bottom: 5px;
 .gif-div{
     width: 340px;
     height: 330px;
-    padding-bottom: 20px;
+    margin: 10px;
+    padding-bottom: 10px;
 }
 .p{
     margin-bottom: 27px;

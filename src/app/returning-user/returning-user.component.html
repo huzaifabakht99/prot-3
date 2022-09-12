@@ -1,7 +1,7 @@
 <!-- <header fxLayout="row" fxLayoutAlign="space-around center"><img src="../../assets/Group 7253 (1).svg" alt=""></header> -->
 <div class="main">
     <h3>Order Review</h3>
-    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+    <div class="box"  (click)="onClickContactInfo()"  fxLayout="row" fxLayoutAlign="space-between top">
         <div fxLayout="row" fxLayoutAlign="space-between top">
             <div class="img"><img src="../../assets/Group 7545.svg" alt=""></div>
             <div class="text">
@@ -9,9 +9,9 @@
                 <p>{{numberFromSignIn}}</p>
             </div>
         </div>
-        <div ><button (click)="onClickContactInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
+        <div><button class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
     </div>
-    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+    <div class="box" (click)="onClickShippingInfo()" fxLayout="row" fxLayoutAlign="space-between top">
         <div fxLayout="row" fxLayoutAlign="space-between top">
             <div class="img"><img src="../../assets/Group 7492.svg" alt=""></div>
             <div class="text" *ngIf="selectedOption=='0' || selectedOption==''">
@@ -35,9 +35,9 @@
                 <p>{{fullAdd}}</p>
             </div>
         </div>
-        <div ><button (click)="onClickShippingInfo()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon" >expand_more</mat-icon></button></div>
+        <div ><button  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon" >expand_more</mat-icon></button></div>
     </div>
-    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+    <div class="box" fxLayout="row" fxLayoutAlign="space-between top" (click)="onClickDeliveryType()">
         <div fxLayout="row" fxLayoutAlign="space-between top">
             <div class="img"><img src="../../assets/Group 7491.svg" alt=""></div>
             <!-- <div class="text" *ngIf="deliveryCheck!='1' && deliveryCheck!='2'">
@@ -61,9 +61,9 @@
                 <p>1 to 2 business days</p>
             </div>
         </div>
-        <div ><button (click)="onClickDeliveryType()" class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
+        <div ><button  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
     </div>
-    <div class="box" fxLayout="row" fxLayoutAlign="space-between top">
+    <div class="box"  (click)="onClickPayment()" fxLayout="row" fxLayoutAlign="space-between top">
         <div fxLayout="row" fxLayoutAlign="space-between top">
             <div class="img"><img src="../../assets/Group 7490.svg" alt=""></div>
             <div class="text">
@@ -75,7 +75,7 @@
                 <p *ngIf="paymentMethodCheck=='4'"><img id="img" src="../../assets/Frame.svg" alt=""> ****4242</p>
             </div>
         </div>
-        <div><button (click)="onClickPayment()"  class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
+        <div><button   class="btn" fxLayout="row" fxLayoutAlign="space-between center">Edit <mat-icon id="icon">expand_more</mat-icon></button></div>
     </div>
     <div class="box" fxLayout="column" fxLayoutAlign="space-between top">
         <div fxLayout="row" fxLayoutAlign="space-between top" class="line">
